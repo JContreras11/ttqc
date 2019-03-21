@@ -60,7 +60,47 @@
                                 <a href="<?= base_url() ?>">
                                   <i class="fa fa-newspaper-o"></i>  <!-- icono -->
                                   <span class="menu-title">
-
+                                      Entradas
+                                  </span>
+                                </a>
+                              </li>
+                              <li  class="" id="">
+                                <a href="<?= base_url() ?>">
+                                  <i class="fa fa-newspaper-o"></i>  <!-- icono -->
+                                  <span class="menu-title">
+                                      Noticias
+                                  </span>
+                                </a>
+                              </li>
+                              <li  class="" id="categorias">
+                                <a href="<?= base_url() ?>categorias">
+                                  <i class="fa fa-newspaper-o"></i>  <!-- icono -->
+                                  <span class="menu-title">
+                                      Categorioas
+                                  </span>
+                                </a>
+                              </li>
+                              <li  class="" id="">
+                                <a href="<?= base_url() ?>">
+                                  <i class="fa fa-newspaper-o"></i>  <!-- icono -->
+                                  <span class="menu-title">
+                                      Usuarios
+                                  </span>
+                                </a>
+                              </li>
+                              <li  class="" id="">
+                                <a href="<?= base_url() ?>">
+                                  <i class="fa fa-newspaper-o"></i>  <!-- icono -->
+                                  <span class="menu-title">
+                                      Solicitudes
+                                  </span>
+                                </a>
+                              </li>
+                              <li  class="" id="">
+                                <a href="<?= base_url() ?>">
+                                  <i class="fa fa-newspaper-o"></i>  <!-- icono -->
+                                  <span class="menu-title">
+                                      Subscripciones
                                   </span>
                                 </a>
                               </li>

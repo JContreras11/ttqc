@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>ADMIN - Brisas Del Titcaca</title>
+    <title>ADMIN - TTQC</title>
 
 
     <!--STYLESHEET-->
@@ -90,7 +90,7 @@
 
     <script type="text/javascript">
       const url = '<?= $this->uri->segment(1) ?>'
-      const base_url = '<?= base_url() ?>'
+      var base_url = '<?= base_url() ?>'
       const global_url = '';
     </script>
 
