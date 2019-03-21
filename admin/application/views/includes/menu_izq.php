@@ -56,16 +56,16 @@
                               <!--Category name-->
                               <li class="list-header">Menu</li>
 
-                              <li  class="" id="">
-                                <a href="<?= base_url() ?>">
+                              <li  class="" id="entradas">
+                                <a href="<?= base_url() ?>entradas">
                                   <i class="fa fa-newspaper-o"></i>  <!-- icono -->
                                   <span class="menu-title">
                                       Entradas
                                   </span>
                                 </a>
                               </li>
-                              <li  class="" id="">
-                                <a href="<?= base_url() ?>">
+                              <li  class="" id="noticias">
+                                <a href="<?= base_url() ?>noticias">
                                   <i class="fa fa-newspaper-o"></i>  <!-- icono -->
                                   <span class="menu-title">
                                       Noticias
@@ -80,24 +80,24 @@
                                   </span>
                                 </a>
                               </li>
-                              <li  class="" id="">
-                                <a href="<?= base_url() ?>">
+                              <li  class="" id="usuarios">
+                                <a href="<?= base_url() ?>usuarios">
                                   <i class="fa fa-newspaper-o"></i>  <!-- icono -->
                                   <span class="menu-title">
                                       Usuarios
                                   </span>
                                 </a>
                               </li>
-                              <li  class="" id="">
-                                <a href="<?= base_url() ?>">
+                              <li  class="" id="solicitudes">
+                                <a href="<?= base_url() ?>solicitudes">
                                   <i class="fa fa-newspaper-o"></i>  <!-- icono -->
                                   <span class="menu-title">
                                       Solicitudes
                                   </span>
                                 </a>
                               </li>
-                              <li  class="" id="">
-                                <a href="<?= base_url() ?>">
+                              <li  class="" id="subs">
+                                <a href="<?= base_url() ?>subs">
                                   <i class="fa fa-newspaper-o"></i>  <!-- icono -->
                                   <span class="menu-title">
                                       Subscripciones
