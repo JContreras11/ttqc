@@ -46,7 +46,7 @@ class Noticias extends CI_Controller
 
 
 
-        $crud->set_field_upload('img_new','uploads');
+        $crud->set_field_upload('img_new','../uploads');
 
         $output = $crud->render();
 

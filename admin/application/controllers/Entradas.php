@@ -49,13 +49,16 @@ class Entradas  extends CI_Controller
 
         $crud->set_relation('ide_usu','users','nom_usu');
 
+        $crud->set_relation_n_n('categories', 'blog_cat', 'categories', 'ide_blog', 'ide_cat', 'nom_cat');
+
+
         $crud->field_type('fech_blog', 'hidden');
         $crud->field_type('is_active', 'hidden');
         $crud->field_type('url_blog', 'hidden');
         $crud->field_type('ide_est_blog', 'true_false',1);
 
 
-        $crud->set_field_upload('img_blog','uploads');
+        $crud->set_field_upload('img_blog','../uploads');
 
         $output = $crud->render();
 

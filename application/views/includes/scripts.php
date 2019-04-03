@@ -7,5 +7,6 @@
   <script src="<?= base_url() ?>assets/js/jquery.magnific-popup.min.js"></script>
   <script src="<?= base_url() ?>assets/js/jquery.sticky.js"></script>
   <script src="<?= base_url() ?>assets/js/main.js"></script>
+  <script src="<?= base_url() ?>assets/js/propios.js"></script>
 </body>
 </html>

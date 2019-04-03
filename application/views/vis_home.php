@@ -1,29 +1,24 @@
 
 
-
-
     <!-- start banner Area -->
-    <section class="banner-area relative" id="home" data-parallax="scroll" data-image-src="<?= base_url() ?>assets/img/header-bg.jpg">
-      <div class="overlay-bg overlay"></div>
+    <section class="banner-area relative" id="home" data-parallax="scroll" data-image-src="<?= base_url() ?>assets/img/T.png">
+      <div class=""></div>
       <div class="container">
         <div class="row fullscreen">
           <div class="banner-content d-flex align-items-center col-lg-12 col-md-12">
             <h1>
-              A Discount Toner Cartridge <br>
-              Is Better Than Ever.
+
             </h1>
           </div>
           <div class="head-bottom-meta d-flex justify-content-between align-items-end col-lg-12">
-            <div class="col-lg-6 flex-row d-flex meta-left no-padding">
-              <p><span class="lnr lnr-heart"></span> 15 Likes</p>
-              <p><span class="lnr lnr-bubble"></span> 02 Comments</p>
+            <div class="col-lg-6 flex-row d-flex meta-left no-padding">              
             </div>
             <div class="col-lg-6 flex-row d-flex meta-right no-padding justify-content-end">
-              <div class="user-meta">
-                <h4 class="text-white">Mark wiens</h4>
-                <p>12 Dec, 2017 11:21 am</p>
+              <div class="col-lg-4 col-sm-12 footer-social">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
               </div>
-              <img class="img-fluid user-img" src="<?= base_url() ?>assets/img/user.jpg" alt="">
             </div>
           </div>
         </div>
@@ -32,119 +27,90 @@
     <!-- End banner Area -->
 
 
+    <section class="section-gap" style="background: #fff;padding-bottom: 0;padding-top: 20px;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <center>
+              <h1>¡TTQC!</h1>
+            </center>
+          </div>
+          <div class="col-md-6">
+                <p>Somos una plataforma transmedia que cree en el potencial narrativo tan inmenso que pueden tener ‘simples’ relatos cotidianos. ¡Te tengo que contar! Es un proyecto de escritura colaborativa en la que los jóvenes bogotanos podrán aportar sus historias del día a día, para así ir creando un banco de historias, que a su vez puedan ser adaptadas por jóvenes realizadores audiovisuales, guionistas, escritores, etc, en guiones de ficción.</p>
+          </div>
+          <div class="col-md-6">
+                <iframe src="https://giphy.com/embed/ir9OEpgbjzzPdsWypx" width="100%" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/question-ir9OEpgbjzzPdsWypx"></a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Start category Area -->
-    <section class="category-area section-gap" id="news">
+    <section class="category-area section-gap" id="news" style="padding-top: 20px;    padding-bottom: 20px;">
       <div class="container">
         <div class="row d-flex justify-content-center">
           <div class="menu-content pb-70 col-lg-8">
             <div class="title text-center">
-              <h1 class="mb-10">Latest News from all categories</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua.</p>
+              <h1 class="mb-10">Noticias</h1>
+              <p>Noticias de la semana que te pueden interesar</p>
             </div>
           </div>
         </div>
+
         <div class="active-cat-carusel">
-          <div class="item single-cat">
-            <img src="<?= base_url() ?>assets/img/c1.jpg" alt="">
-            <p class="date">10 Jan 2018</p>
-            <h4><a href="#">It S Hurricane Season Visiting Hilton</a></h4>
-          </div>
-          <div class="item single-cat">
-            <img src="<?= base_url() ?>assets/img/c2.jpg" alt="">
-            <p class="date">10 Jan 2018</p>
-            <h4><a href="#">What Makes A Hotel Boutique</a></h4>
-          </div>
-          <div class="item single-cat">
-            <img src="<?= base_url() ?>assets/img/c3.jpg" alt="">
-            <p class="date">10 Jan 2018</p>
-            <h4><a href="#">Les Houches The Hidden Gem Valley</a></h4>
-          </div>
+
+          <?php foreach ($news as $k => $v): ?>
+            <div class="item single-cat">
+              <img src="<?= base_url() ?>uploads/<?= $v->img_new ?>" alt="" style="max-height: 227px;">
+              <p class="date"><?= date('d-m-Y', strtotime($v->tit_new)) ?></p>
+              <h4><a href="<?= $v->url_new ?>" target="_blank"><?= $v->tit_new ?></a></h4>
+              <p><?= $v->des_new ?></p>
+            </div>
+          <?php endforeach; ?>
+
         </div>
       </div>
     </section>
     <!-- End category Area -->
 
     <!-- Start travel Area -->
-    <section class="travel-area section-gap" id="travel">
+    <section class="travel-area section-gap" id="travel" style=" padding-top: 20px; padding-bottom: 20px;">
       <div class="container">
         <div class="row d-flex justify-content-center">
           <div class="menu-content pb-70 col-lg-8">
             <div class="title text-center">
-              <h1 class="mb-10">Hot topics from Travel Section</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua.</p>
+              <h1 class="mb-10">CATEGORIAS</h1>
+              <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua.</p> -->
             </div>
           </div>
         </div>
+
         <div class="row">
-          <div class="col-lg-6 travel-left">
-            <div class="single-travel media pb-70">
-              <img class="img-fluid d-flex  mr-3" src="<?= base_url() ?>assets/img/t1.jpg" alt="">
-              <div class="dates">
-                <span>20</span>
-                <p>Dec</p>
+          <?php foreach ($cat as $k => $v): ?>
+
+
+            <div class="col-lg-4 travel-left">
+              <div class="home-categori single-cat cat">
+                <a href="<?= base_url() ?>categoria/<?= $v->url_cat ?>">
+                  <img class="img-reponsive" src="<?= base_url() ?>uploads/<?= $v->img_cat ?>" style="max-width: 320px;max-height: 320px;" alt="">
+                </a>
+
+                <div class="inner-text">
+                  <h4 class="mt-0"><a href="<?= base_url() ?>categoria/<?= $v->url_cat ?>"><?= $v->nom_cat ?></a></h4>
+                  <p class="des-cat" style="display:none;">
+                    <?= strip_tags($v->des_cat) ?>
+                  </p>
+                  <!-- <a href="<?= base_url(). $v->url_cat ?>" class="primary-btn load-more pbtn-2 text-uppercase mx-auto mt-60">ver mas </a> -->
+                </div>
               </div>
-              <div class="media-body align-self-center">
-                <h4 class="mt-0"><a href="#">Addiction When Gambling
-                Becomes A Problem</a></h4>
-                <p>inappropriate behavior Lorem ipsum dolor sit amet, consectetur.</p>
-              <div class="meta-bottom d-flex justify-content-between">
-                <p><span class="lnr lnr-heart"></span> 15 Likes</p>
-                <p><span class="lnr lnr-bubble"></span> 02 Comments</p>
-              </div>
-              </div>
-            </div>
-            <div class="single-travel media">
-              <img class="img-fluid d-flex  mr-3" src="<?= base_url() ?>assets/img/t3.jpg" alt="">
-              <div class="dates">
-                <span>20</span>
-                <p>Dec</p>
-              </div>
-              <div class="media-body align-self-center">
-                <h4 class="mt-0"><a href="#">Addiction When Gambling
-                Becomes A Problem</a></h4>
-                <p>inappropriate behavior Lorem ipsum dolor sit amet, consectetur.</p>
-              <div class="meta-bottom d-flex justify-content-between">
-                <p><span class="lnr lnr-heart"></span> 15 Likes</p>
-                <p><span class="lnr lnr-bubble"></span> 02 Comments</p>
-              </div>
-              </div>
-            </div>
           </div>
-          <div class="col-lg-6 travel-right">
-            <div class="single-travel media pb-70">
-              <img class="img-fluid d-flex  mr-3" src="<?= base_url() ?>assets/img/t2.jpg" alt="">
-              <div class="dates">
-                <span>20</span>
-                <p>Dec</p>
-              </div>
-              <div class="media-body align-self-center">
-                <h4 class="mt-0"><a href="#">Addiction When Gambling
-                Becomes A Problem</a></h4>
-                <p>inappropriate behavior Lorem ipsum dolor sit amet, consectetur.</p>
-              <div class="meta-bottom d-flex justify-content-between">
-                <p><span class="lnr lnr-heart"></span> 15 Likes</p>
-                <p><span class="lnr lnr-bubble"></span> 02 Comments</p>
-              </div>
-              </div>
-            </div>
-            <div class="single-travel media">
-              <img class="img-fluid d-flex  mr-3" src="<?= base_url() ?>assets/img/t4.jpg" alt="">
-              <div class="dates">
-                <span>20</span>
-                <p>Dec</p>
-              </div>
-              <div class="media-body align-self-center">
-                <h4 class="mt-0"><a href="#">Addiction When Gambling
-                Becomes A Problem</a></h4>
-                <p>inappropriate behavior Lorem ipsum dolor sit amet, consectetur.</p>
-              <div class="meta-bottom d-flex justify-content-between">
-                <p><span class="lnr lnr-heart"></span> 15 Likes</p>
-                <p><span class="lnr lnr-bubble"></span> 02 Comments</p>
-              </div>
-              </div>
-            </div>
-          </div>
-          <a href="#" class="primary-btn load-more pbtn-2 text-uppercase mx-auto mt-60">Load More </a>
+
+
+          <?php endforeach; ?>
+
+        </div>
+        <div class="row">
+          <!-- <a href="#" class="primary-btn load-more pbtn-2 text-uppercase mx-auto mt-60">Load More </a> -->
         </div>
       </div>
     </section>
@@ -156,123 +122,60 @@
         <div class="row d-flex justify-content-center">
           <div class="menu-content pb-70 col-lg-8">
             <div class="title text-center">
-              <h1 class="mb-10">Fashion News This Week</h1>
+              <h1 class="mb-10">Ultimas Entradas</h1>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua.</p>
             </div>
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-3 col-md-6 single-fashion">
-            <img class="img-fluid" src="<?= base_url() ?>assets/img/f1.jpg" alt="">
-            <p class="date">10 Jan 2018</p>
-            <h4><a href="#">Addiction When Gambling
-            Becomes A Problem</a></h4>
-            <p>
-              inappropriate behavior ipsum dolor sit amet, consectetur.
-            </p>
-            <div class="meta-bottom d-flex justify-content-between">
-              <p><span class="lnr lnr-heart"></span> 15 Likes</p>
-              <p><span class="lnr lnr-bubble"></span> 02 Comments</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 single-fashion">
-            <img class="img-fluid" src="<?= base_url() ?>assets/img/f2.jpg" alt="">
-            <p class="date">10 Jan 2018</p>
-            <h4><a href="#">Addiction When Gambling
-            Becomes A Problem</a></h4>
-            <p>
-              inappropriate behavior ipsum dolor sit amet, consectetur.
-            </p>
-            <div class="meta-bottom d-flex justify-content-between">
-              <p><span class="lnr lnr-heart"></span> 15 Likes</p>
-              <p><span class="lnr lnr-bubble"></span> 02 Comments</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 single-fashion">
-            <img class="img-fluid" src="<?= base_url() ?>assets/img/f3.jpg" alt="">
-            <p class="date">10 Jan 2018</p>
-            <h4><a href="#">Addiction When Gambling
-            Becomes A Problem</a></h4>
-            <p>
-              inappropriate behavior ipsum dolor sit amet, consectetur.
-            </p>
-            <div class="meta-bottom d-flex justify-content-between">
-              <p><span class="lnr lnr-heart"></span> 15 Likes</p>
-              <p><span class="lnr lnr-bubble"></span> 02 Comments</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 single-fashion">
-            <img class="img-fluid" src="<?= base_url() ?>assets/img/f4.jpg" alt="">
-            <p class="date">10 Jan 2018</p>
-            <h4><a href="#">Addiction When Gambling
-            Becomes A Problem</a></h4>
-            <p>
-              inappropriate behavior ipsum dolor sit amet, consectetur.
-            </p>
-            <div class="meta-bottom d-flex justify-content-between">
-              <p><span class="lnr lnr-heart"></span> 15 Likes</p>
-              <p><span class="lnr lnr-bubble"></span> 02 Comments</p>
-            </div>
-          </div>
-          <a href="#" class="primary-btn load-more pbtn-2 text-uppercase mx-auto mt-60">Load More </a>
+          <?php foreach ($blog as $k => $v): ?>
+
+            <div class="col-lg-3 col-md-6 single-fashion">
+              <img class="img-fluid" src="<?= base_url() ?>uploads/<?= $v->img_blog  ?>" alt="">
+              <p class="date"><?= $v->fech_blog ?></p>
+              <h4><a href="<?= base_url() ?>entrada/<?= $v->url_blog?>"><?= $v->tit_blog  ?></a></h4>
+                <p>
+
+                </p>
+                <div class="meta-bottom d-flex justify-content-between">
+                  <p><span class="lnr lnr-heart"></span> <?= $v->likes < 10 && $v->likes > 0 ? '0'.$v->likes : $v->likes ?> Likes</p>
+                  <p><span class="lnr lnr-bubble"></span> <?= $v->comments ?> Comentarios</p>
+                </div>
+              </div>
+
+          <?php endforeach; ?>
+
         </div>
       </div>
     </section>
     <!-- End fashion Area -->
 
-    <!-- Start team Area -->
-    <section class="team-area section-gap" id="team">
-      <div class="container">
-        <div class="row d-flex justify-content-center">
-          <div class="menu-content pb-70 col-lg-8">
-            <div class="title text-center">
-              <h1 class="mb-10">About Blogger Team</h1>
-              <p>Who are in extremely love with eco friendly system.</p>
-            </div>
-          </div>
-        </div>
-        <div class="row justify-content-center d-flex align-items-center">
-          <div class="col-lg-6 team-left">
-            <p>
-              inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why it’s crucial that, as women, our behavior on the job is beyond reproach. inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why it’s crucial that.
-            </p>
-            <p>
-              inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why it’s crucial that, as women.
-            </p>
-          </div>
-          <div class="col-lg-6 team-right d-flex justify-content-center">
-            <div class="row active-team-carusel">
-              <div class="single-team">
-                  <div class="thumb">
-                      <img class="img-fluid" src="<?= base_url() ?>assets/img/team1.jpg" alt="">
-                      <div class="align-items-center justify-content-center d-flex">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                      </div>
-                  </div>
-                  <div class="meta-text mt-30 text-center">
-                    <h4>Dora Walker</h4>
-                    <p>Senior Core Developer</p>
-                  </div>
-              </div>
-              <div class="single-team">
-                  <div class="thumb">
-                      <img class="img-fluid" src="<?= base_url() ?>assets/img/team2.jpg" alt="">
-                      <div class="align-items-center justify-content-center d-flex">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                      </div>
-                  </div>
-                  <div class="meta-text mt-30 text-center">
-                    <h4>Lena Keller</h4>
-                    <p>Creative Content Developer</p>
-                  </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End team Area -->
+
+
+        <?php $this->load->view('includes/add_blog') ?>
+
+
+
+
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+
+          $('.cat').hover(function () {
+              $('.cat').removeClass('hov');
+              $('.des-cat').css('display','none');
+              $($(this).children()[1]).children()[1].style.display = "block";
+              $(this).addClass('hov')
+          })
+
+          $('.cat').mouseleave(function () {
+              $('.cat').removeClass('hov');
+              $('.des-cat').css('display','none');
+          })
+
+
+        })
+
+    </script>

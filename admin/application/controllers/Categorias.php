@@ -37,10 +37,10 @@ class Categorias extends CI_Controller
         $crud->display_as('nom_cat','Nombre');
         $crud->display_as('des_cat','Descripcion');
 
-        $crud->field_type('fech_cat', 'hidden');
+        $crud->field_type('fech_cat', 'hidden',date('Y-m-d'));
         $crud->field_type('url_cat', 'hidden');
-        $crud->field_type('is_active', 'hidden');
-        $crud->field_type('ide_est_cat', 1);
+        $crud->field_type('is_active', 'hidden',1);
+        $crud->field_type('ide_est_cat', 'true_false', 1);
 
         $crud->display_as('img_cat','Imagen de Categoria');
         $crud->display_as('tags_cat','Etiquetas');
@@ -54,7 +54,7 @@ class Categorias extends CI_Controller
         $crud->display_as('ide_est_cat','Estado');
 
 
-        $crud->set_field_upload('img_cat','uploads');
+        $crud->set_field_upload('img_cat','../uploads');
 
         $output = $crud->render();
 

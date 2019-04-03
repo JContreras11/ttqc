@@ -2,8 +2,8 @@
 <header class="default-header">
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
-        <a class="navbar-brand" href="index.html">
-          <img src="<?= base_url() ?>assets/img/logo.png" alt="">
+        <a class="navbar-brand" href="<?= base_url() ?>">
+          <img src="<?= base_url() ?>assets/img/logo_t.png" alt="" style=" width: 160px;">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -11,13 +11,20 @@
 
         <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
           <ul class="navbar-nav">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#news">News</a></li>
-          <li><a href="#travel">Travel</a></li>
-          <li><a href="#fashion">fashion</a></li>
-          <li><a href="#team">team</a></li>
+            <?php if ($this->session->userdata('logged_in')): ?>
+              <li><a href="javascript:void(0)" data-toggle="modal" data-target="#myModal"> + Añadir</a></li>
+            <?php endif; ?>
+          <li><a href="<?= base_url() ?>">Home</a></li>
+          <li><a href="<?= base_url() ?>temas">Historias</a></li>
+          <li><a href="<?= base_url() ?>home/nosotros">Nosotros</a></li>
+          <li><a href="<?= base_url() ?>home/contacto">Contacto</a></li>
+          <?php if ($this->session->userdata('logged_in')['username']): ?>
+            <li><a href="<?= base_url() ?>usuario/<?= $this->session->userdata('logged_in')['username'] ?>" >Perfil</a></li>
+          <?php else: ?>
+            <li><a href="<?= base_url() ?>login">Login</a></li>
+          <?php endif; ?>
           <!-- Dropdown -->
-            <li class="dropdown">
+            <!-- <li class="dropdown">
               <a class="dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                 Pages
               </a>
@@ -29,7 +36,7 @@
                 <a class="dropdown-item" href="generic.html">Generic</a>
                 <a class="dropdown-item" href="elements.html">Elements</a>
               </div>
-            </li>
+            </li> -->
           </ul>
         </div>
     </div>

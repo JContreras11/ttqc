@@ -1,0 +1,51 @@
+.home-categori{
+  background-color: #FFFFFF;
+  /* padding-bottom: 6rem; */
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  margin-top: 15px;
+}
+
+
+.img-all-w{
+  width: 100%;
+}
+
+.inner-text{
+  padding: 1.5rem 2.4rem 0;
+}
+
+
+.des-cat{
+  font-family: fantasy;
+padding: 12px 4px;
+font-size: 16px;
+text-align: justify;
+font-weight: 300;
+line-height: 1.0;
+/* color: #000; */
+}
+
+
+
+.hov{
+  position: absolute;
+    z-index: 1;
+    box-shadow: 1px 9px 11px #48484863;
+    transition-delay: 1s;
+    transition-duration: 1s;
+    animation-delay: 1s;
+    animation-duration: 1s;
+}
+
+
+
+
+.social-i{
+  background: #f74d3b;
+padding: 10px 13px;
+margin: 3px 5px;
+border-radius: 100%;
+color: #fff;
+}
