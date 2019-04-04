@@ -53,12 +53,14 @@
                         </div>
                         <div class="bottom-wrapper">
                             <div class="row">
+                                <a href="javascript:void(0)" class="acction" data-action="like" idr="<?= $data[0]->ide_blog ?>">
+                                  <div class="col-lg-4 single-b-wrap col-md-12">
+                                      <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                       Like
+                                  </div>
+                                </a>
                                 <div class="col-lg-4 single-b-wrap col-md-12">
-                                    <i class="fa fa-heart-o" aria-hidden="true"></i>
-                                     like this
-                                </div>
-                                <div class="col-lg-4 single-b-wrap col-md-12">
-                                    <i class="fa fa-comment-o" aria-hidden="true"></i> 06 comments
+                                    <i class="fa fa-comment-o" aria-hidden="true"></i> <?= count($com) ?> comments
                                 </div>
                                 <!-- <div class="col-lg-4 single-b-wrap col-md-12">
                                     <ul class="social-icons">
@@ -260,23 +262,16 @@
               <div class="col-md-12">
                 <fieldset>
                   <div class="row">
-                    <div class="form-group col-md-6">
-                      <input type="text" class="form-control" placeholder="Email" id="" autofocus name="email" required>
-                      <input type="hidden" class="form-control" id="" value="<?= $data[0]->ide_usu ?>" name="id_u">
-                      <input type="hidden" class="form-control" id="" value="<?= $data[0]->ide_blog ?>" name="id_b">
-                    </div>
-
-                    <div class="form-group col-md-6">
-                      <input type="text" class="form-control" placeholder="Telefono" id=""  name="tel">
-                    </div>
+                    <?php if ($data[0]->ide_est_blog == 1): ?>
+                      <div class="col-md-12">
+                        <h3><?= $data[0]->ema_usu ?></h3>
+                      </div>
+                    <?php else: ?>
+                      <div class="col-md-12">
+                        <p>Mensaje :D</p>
+                      </div>
+                    <?php endif; ?>
                   </div>
-
-                  <div class="form-group">
-                      <textarea type="text" class="form-control" id="" placeholder="Descripción" name="des" ></textarea>
-                  </div>
-
-
-
                 </fieldset>
               </div>
 
@@ -288,8 +283,8 @@
 
 
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-        <button type="submit" class="btn btn-success" >Usar</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+        <!-- <button type="submit" class="btn btn-success" >Usar</button> -->
       </div>
     </form>
     </div>

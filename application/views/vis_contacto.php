@@ -41,9 +41,13 @@
             <ul class="unordered-list">
               <li>ttengoquecontar@gmail.com</li>
               <li>+57 316 4195134</li>
+              <li><a target="_blank" href="https://www.instagram.com/ttengoquecontar/"><i class="fa fa-instagram"></i> Instagram</a> </li>
             </ul>
         </div>
 
       </div>
     </div>
   </section>
+
+
+  <?php $this->load->view('includes/add_blog') ?>

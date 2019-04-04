@@ -32,9 +32,9 @@
                   <img src="<?= base_url() ?>assets/img/estefania.png" alt="" style=" width: 280px;margin-bottom: 20px;border-radius: 100%; height: 280px;">
 									<h4 class="mb-10">Estefanía Gordillo</h4>
                   <div class="col-lg-12 col-sm-12 ">
-                    <a href="#" target="_blank"><i class="fa fa-facebook social-i"></i></a>
-                    <a href="#" target="_blank"><i class="fa fa-twitter social-i"></i></a>
-                    <a href="#" target="_blank"><i class="fa fa-instagram social-i"></i></a>
+                    <a href="https://www.facebook.com/estefania.gordillo.12" target="_blank"><i class="fa fa-facebook social-i"></i></a>
+                    <a href="https://www.instagram.com/estefaniag_15/" target="_blank"><i class="fa fa-instagram social-i"></i></a>
+                    <a href="https://twitter.com/StefaniaG15" target="_blank"><i class="fa fa-twitter social-i"></i></a>
                   </div>
                   <p>Comunicadora social con énfasis en producción audiovisual <br> Creadora y directora de www.tetengoquecontar.com</p>
 								</div>
@@ -91,3 +91,6 @@
 
         </div>
       </section>
+
+
+      <?php $this->load->view('includes/add_blog') ?>

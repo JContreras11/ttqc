@@ -11,13 +11,13 @@
             </h1>
           </div>
           <div class="head-bottom-meta d-flex justify-content-between align-items-end col-lg-12">
-            <div class="col-lg-6 flex-row d-flex meta-left no-padding">              
+            <div class="col-lg-6 flex-row d-flex meta-left no-padding">
             </div>
             <div class="col-lg-6 flex-row d-flex meta-right no-padding justify-content-end">
               <div class="col-lg-4 col-sm-12 footer-social">
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-instagram"></i></a>
+                <!-- <a href="#"><i class="fa fa-facebook"></i></a> -->
+                <a href="https://www.instagram.com/ttengoquecontar/" target="_blank"><i class="fa fa-twitter"></i></a>
+                <!-- <a href="#"><i class="fa fa-instagram"></i></a> -->
               </div>
             </div>
           </div>

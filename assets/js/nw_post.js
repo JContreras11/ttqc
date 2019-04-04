@@ -10,13 +10,13 @@ $(document).ready(function () {
     }
 
     $.ajax({
-      url:base+'blog/ins',      
+      url:base+'blog/ins',
       data: formdata ? formdata : formxx.serialize(),
       contentType : false,
       processData : false,
       type:'post',
       success: function (data) {
-          console.log(data);
+          location.href=base+'entrada/'+data;
           $('#myModal').modal('hide');
       },
     })

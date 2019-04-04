@@ -12,7 +12,7 @@
         <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
           <ul class="navbar-nav">
             <?php if ($this->session->userdata('logged_in')): ?>
-              <li><a href="javascript:void(0)" data-toggle="modal" data-target="#myModal"> + Añadir</a></li>
+              <li><a href="javascript:void(0)" data-toggle="modal" data-target="#myModal"> + Escribir</a></li>
             <?php endif; ?>
           <li><a href="<?= base_url() ?>">Home</a></li>
           <li><a href="<?= base_url() ?>temas">Historias</a></li>

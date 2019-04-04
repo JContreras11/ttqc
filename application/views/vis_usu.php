@@ -215,7 +215,7 @@
                					<!--===================================================-->
                					<div class="panel">
                					    <div class="panel-heading">
-               					        <button type="button" name="button" class="btn btn-success" data-toggle="modal" data-target="#myModal" style="    margin: 17px 35px;">Añadir Entrada</button>
+               					        <button type="button" name="button" class="btn btn-success" data-toggle="modal" data-target="#myModal" style="    margin: 17px 35px;">Escribir</button>
                					    </div>
                					    <div class="panel-body">
                					        <table id="demo-dt-basic" class="table table-striped table-bordered" cellspacing="0" width="100%">

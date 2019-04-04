@@ -106,7 +106,7 @@ class Blog extends CI_Controller
     $res = $this->Modelo_blog->ins_cat($datos);
 
     $this->output->set_content_type('application/json')
-    ->set_output(json_encode($res));
+    ->set_output(json_encode($id_blog));
   }
 
 
@@ -160,6 +160,36 @@ class Blog extends CI_Controller
       return 'ttq1.png';
      break;
    }
+ }
+
+
+
+ public function acction()
+ {
+
+
+   if ($this->session->userdata('logged_in')) {
+     $sess =  $this->session->userdata('logged_in');
+     $action = $this->input->post('action');
+
+     if ($action === 'like') {
+       $table = 'likes';
+       $data  = array('ide_usu' => $sess['id'] ,'ide_blog' => $this->input->post('id'), );
+     }
+
+     if ($action === 'comment') {
+       $table = 'commets';
+       $data  = array('ide_usu' => $sess['id'] ,'des_com' => $this->input->post('com') ,'ide_blog' => $this->input->post('id'), );
+     }
+
+
+     $res = $this->Modelo_blog->action($table,$data);
+     $this->output->set_content_type('application/json')
+     ->set_output(json_encode($res));
+
+   }
+
+
  }
 
 

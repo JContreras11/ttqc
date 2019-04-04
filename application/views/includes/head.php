@@ -33,8 +33,9 @@
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/bootstrap.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/css/nice-select.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/main.css">
-    <link rel="stylesheet" href="<?= base_url() ?>assets/css/propios.css">    
+    <link rel="stylesheet" href="<?= base_url() ?>assets/css/propios.css">
     <script src="<?= base_url() ?>assets/js/vendor/jquery-2.2.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
   </head>

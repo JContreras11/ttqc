@@ -11,7 +11,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Crear Entrada</h4>
+          <h4 class="modal-title">Escribir</h4>
         </div>
         <form class="form-vertical" id="nwPost"  method="post">
 
@@ -40,6 +40,16 @@
 
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Tags... ejm: #amor, #encuentro, #familia..." name="tags" >
+                    </div>
+
+                    <div class="form-group">
+                      <div class="switch-wrap d-flex justify-content-between">
+                          <p>No Mostrar Correo</p>
+                          <div class="primary-checkbox">
+                            <input type="checkbox" name="priv" id="priv" checked>
+                            <label for="default-checkbox"></label>
+                          </div>
+                        </div>
                     </div>
 
                     <div class="form-group" id="group_img">
@@ -85,7 +95,9 @@
 
 <script type="text/javascript">
 
-  const base = '<?= base_url() ?>'
+  var base = '<?= base_url() ?>'
+
+
   $(document).ready(function () {
 
         get_cat()

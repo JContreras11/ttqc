@@ -8,10 +8,9 @@ class Modelo_blog extends CI_Model
 
   public function get_blog($url)
   {
-    $res = $this->db->select('ide_blog,tit_blog,des_blog,tags_blog,min_des_blog,img_blog,nom_usu,img_usu,fech_blog,blog.ide_usu')
+    $res = $this->db->select('ide_blog,tit_blog,des_blog,tags_blog,min_des_blog,img_blog,nom_usu,img_usu,fech_blog,users.ema_usu,blog.ide_usu,blog.ide_est_blog')
                     ->from('blog')
                     ->where('url_blog',$url)
-                    ->where('ide_est_blog',1)
                     ->where('blog.is_active',1)
                     ->join('users','blog.ide_usu = users.ide_usu')
                     ->get();
@@ -55,7 +54,10 @@ class Modelo_blog extends CI_Model
   public function ins($data)
   {
     if ($this->db->insert('blog',$data)) {
-      return $this->db->insert_id();
+      $id =  $this->db->insert_id();
+      $res = $this->db->select('url_blog')->where('ide_blog',$id)->get('blog')->result()[0]->url_blog;
+
+      return $res;
     } else {
       return false;
     }
@@ -76,6 +78,16 @@ class Modelo_blog extends CI_Model
   public function add_history($data)
   {
     if ($this->db->insert('requests',$data)) {
+      return true;
+    } else {
+      return false;
+    }
+
+  }
+
+  public function action($table, $data)
+  {
+    if ($this->db->insert($table,$data)) {
       return true;
     } else {
       return false;

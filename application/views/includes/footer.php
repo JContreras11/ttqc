@@ -59,9 +59,9 @@
       <p class="col-lg-8 col-sm-12 footer-text">Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados | Desarrollado con <i class="fa fa-heart-o" aria-hidden="true"></i> por <a href="#" target="_blank"> <img src="<?= base_url() ?>assets/img/jesus.png" alt="" style=" width: 20px;" > Jesús Contreras</a></p>
       <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
       <div class="col-lg-4 col-sm-12 footer-social">
-        <a href="#"><i class="fa fa-facebook"></i></a>
-        <a href="#"><i class="fa fa-twitter"></i></a>
-        <a href="#"><i class="fa fa-instagram"></i></a>
+        <!-- <a href="#"><i class="fa fa-facebook"></i></a> -->
+        <!-- <a href="https://www.instagram.com/ttengoquecontar/"><i class="fa fa-twitter"></i></a> -->
+        <a href="https://www.instagram.com/ttengoquecontar/"><i class="fa fa-instagram"></i></a>
       </div>
     </div>
   </div>
