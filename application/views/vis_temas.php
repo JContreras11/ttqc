@@ -21,7 +21,7 @@
                             <div class="detail">
                                 <a href="<?= base_url()?>entrada/<?= $v->url_blog ?>"><h4 class="pb-20"><?= $v->tit_blog ?></h4></a>
                                 <p>
-                                    <?= $v->min_des_blog ?>
+                                    <?= substr($v->min_des_blog, 0, 150) ?>...
                                 </p>
                                 <p class="footer pt-20">
                                 <i class="fa fa-heart-o" aria-hidden="true"></i>

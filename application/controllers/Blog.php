@@ -16,24 +16,31 @@ class Blog extends CI_Controller
     public function get_blog($url)
     {
 
-      $res = $this->Modelo_blog->get_blog($url);
+
+      if ($this->session->userdata('logged_in')) {
+            $res = $this->Modelo_blog->get_blog($url);
 
 
-      if ($res) {
+            if ($res) {
 
-          $data['data'] = $res;
-          $data['cat'] = $this->Modelo_blog->get_cat($res[0]->ide_blog);
-          $data['com'] = $this->Modelo_blog->get_com($res[0]->ide_blog);
+                $data['data'] = $res;
+                $data['cat'] = $this->Modelo_blog->get_cat($res[0]->ide_blog);
+                $data['com'] = $this->Modelo_blog->get_com($res[0]->ide_blog);
 
-          $this->load->view('includes/head');
-          $this->load->view('includes/menu');
-          $this->load->view('vis_single_blog',$data);
-          $this->load->view('includes/footer');
-          $this->load->view('includes/scripts');
+                $this->load->view('includes/head');
+                $this->load->view('includes/menu');
+                $this->load->view('vis_single_blog',$data);
+                $this->load->view('includes/footer');
+                $this->load->view('includes/scripts');
 
-      } else {
-        redirect('Home','refresh');
+            } else {
+              redirect('Home','refresh');
+            }
+
+      }else {
+        redirect('login','refresh');
       }
+
 
 
       // $this->output->set_content_type('application/json')
@@ -43,71 +50,157 @@ class Blog extends CI_Controller
 
 
 
-  public function ins()
-  {
-
-
-    $sess=$this->session->userdata('logged_in');
-    $s_id=$sess['id'];
-
-    $final_image='';
-    $valid_extensions = array('jpeg', 'jpg', 'png', 'gif', 'bmp');
-    $path = "./uploads/";
-
-    if(isset($_FILES['imgInp']))
+    public function ins()
     {
-     $img = $_FILES['imgInp']['name'];
-     $tmp = $_FILES['imgInp']['tmp_name'];
-     $ext = strtolower(pathinfo($img, PATHINFO_EXTENSION));
 
 
+      $sess=$this->session->userdata('logged_in');
+      $s_id=$sess['id'];
 
-     if(in_array($ext, $valid_extensions))
-     {
-       $final_image = rand(1000,1000000).$img;
-       $path = $path.$final_image;
+      $final_image='';
+      $valid_extensions = array('jpeg', 'jpg', 'png', 'gif', 'bmp');
+      $path = "./uploads/";
 
-      if(move_uploaded_file($tmp,$path))
+      if(isset($_FILES['imgInp']))
       {
-    //   echo "<img src='$path' />";
-      }
-     }
-     else
-     {
+       $img = $_FILES['imgInp']['name'];
+       $tmp = $_FILES['imgInp']['tmp_name'];
+       $ext = strtolower(pathinfo($img, PATHINFO_EXTENSION));
+
+
+
+       if(in_array($ext, $valid_extensions))
+       {
+         $final_image = rand(1000,1000000).$img;
+         $path = $path.$final_image;
+
+        if(move_uploaded_file($tmp,$path))
+        {
+      //   echo "<img src='$path' />";
+        }
+       }
+       else
+       {
+         $final_image = $this->randImg(rand(1,5));
+       }
+     }else {
        $final_image = $this->randImg(rand(1,5));
      }
-   }else {
-     $final_image = $this->randImg(rand(1,5));
-   }
 
 
 
 
-    $data = array(
-      'tit_blog' => $this->input->post('tit'),
-      'des_blog' => $this->input->post('cont'),
-      'ide_est_blog' => 1,
-      'tags_blog' => $this->input->post('tags'),
-      'min_des_blog' => $this->input->post('min'),
-      'ide_usu' => $s_id,
-      'img_blog' => $final_image,
-      'url_blog' => $this->input->post('url'),
-    );
+      $data = array(
+        'tit_blog' => $this->input->post('tit'),
+        'des_blog' => $this->input->post('cont'),
+        'ide_est_blog' => $this->input->post('priv') != '' ? 0 : 1,
+        'tags_blog' => $this->input->post('tags'),
+        'min_des_blog' => $this->input->post('min'),
+        'ide_usu' => $s_id,
+        'img_blog' => $final_image,
+        'url_blog' => $this->input->post('url'),
+      );
 
-    $id_blog = $this->Modelo_blog->ins($data);
+      $res = $this->Modelo_blog->ins($data);
+      $id_blog = $res['id'];
 
-    $cat = $this->input->post('cat');
-    $datos = array();
+      $cat = $this->input->post('cat');
+      $datos = array();
 
-    foreach ($cat as $k => $v) {
-      $datos[] = array('ide_blog' => $id_blog, 'ide_cat' => $v );
+      foreach ($cat as $k => $v) {
+        $datos[] = array('ide_blog' => $id_blog, 'ide_cat' => $v );
+      }
+
+       $this->Modelo_blog->ins_cat($datos);
+
+      $this->output->set_content_type('application/json')
+      ->set_output(json_encode($res['url']));
     }
 
-    $res = $this->Modelo_blog->ins_cat($datos);
 
-    $this->output->set_content_type('application/json')
-    ->set_output(json_encode($id_blog));
-  }
+
+
+    public function upd()
+    {
+
+
+          $sess=$this->session->userdata('logged_in');
+          $s_id=$sess['id'];
+
+          $final_image='';
+          $valid_extensions = array('jpeg', 'jpg', 'png', 'gif', 'bmp');
+          $path = "./uploads/";
+
+          if(isset($_FILES['imgInp']))
+          {
+           $img = $_FILES['imgInp']['name'];
+           $tmp = $_FILES['imgInp']['tmp_name'];
+           $ext = strtolower(pathinfo($img, PATHINFO_EXTENSION));
+
+
+
+           if(in_array($ext, $valid_extensions))
+           {
+             $final_image = rand(1000,1000000).$img;
+             $path = $path.$final_image;
+
+            if(move_uploaded_file($tmp,$path))
+            {
+          //   echo "<img src='$path' />";
+            }
+           }
+           else
+           {
+             $final_image = '';
+           }
+         }else {
+           $final_image = '';
+         }
+
+
+          if ($final_image != '') {
+
+                    $data = array(
+                      'tit_blog' => $this->input->post('tit'),
+                      'des_blog' => $this->input->post('cont'),
+                      'ide_est_blog' => $this->input->post('priv') != '' ? 0 : 1,
+                      'tags_blog' => $this->input->post('tags'),
+                      'min_des_blog' => $this->input->post('min'),
+                      'img_blog' => $final_image,
+                      'url_blog' => $this->input->post('url'),
+                    );
+
+          } else {
+
+                    $data = array(
+                      'tit_blog' => $this->input->post('tit'),
+                      'des_blog' => $this->input->post('cont'),
+                      'ide_est_blog' => $this->input->post('priv') != '' ? 0 : 1,
+                      'tags_blog' => $this->input->post('tags'),
+                      'min_des_blog' => $this->input->post('min'),
+                      'url_blog' => $this->input->post('url'),
+                    );
+          }
+
+
+
+          $res = $this->Modelo_blog->act($this->input->post('id_b'), $data);
+
+          $cat = $this->input->post('cat');
+          $datos = array();
+
+          foreach ($cat as $k => $v) {
+            $datos[] = array('ide_blog' => $this->input->post('id_b'), 'ide_cat' => $v );
+          }
+
+          $res = $this->Modelo_blog->upd_cat($this->input->post('id_b'),$datos);
+
+
+
+        $this->output->set_content_type('application/json')
+        ->set_output(json_encode($res));
+
+    }
 
 
 
@@ -117,20 +210,17 @@ class Blog extends CI_Controller
     $sess =  $this->session->userdata('logged_in');
 
 
-    $data = array(
-      'ide_usu_req' => $sess['id'],
-      'ide_usu_rec' => $this->input->post('id_u'),
-      'ide_blog' => $this->input->post('id_b'),
-      'ema_req' => $this->input->post('email'),
-      'tel_req' => $this->input->post('tel'),
-      'des_req' => $this->input->post('des'),
-    );
+      $data = array(
+        'ide_usu_req' => $sess['id'],
+        'ide_usu_rec' => $this->input->post('id_u'),
+        'ide_blog' => $this->input->post('id_b'),
+      );
 
 
-    $res = $this->Modelo_blog->add_history($data);
-    $this->output->set_content_type('application/json')
-    ->set_output(json_encode($res));
-  }
+      $res = $this->Modelo_blog->add_history($data);
+      $this->output->set_content_type('application/json')
+      ->set_output(json_encode($res));
+    }
 
 
  public function randImg($num)
@@ -180,15 +270,38 @@ class Blog extends CI_Controller
      if ($action === 'comment') {
        $table = 'commets';
        $data  = array('ide_usu' => $sess['id'] ,'des_com' => $this->input->post('com') ,'ide_blog' => $this->input->post('id'), );
+
+       $res = array(
+         'username' => $sess['username'],
+         'imagen' => $sess['imagen'],
+        );
+
      }
 
 
-     $res = $this->Modelo_blog->action($table,$data);
+      $this->Modelo_blog->action($table,$data);
      $this->output->set_content_type('application/json')
      ->set_output(json_encode($res));
 
    }
 
+
+ }
+
+ public function del_blog()
+ {
+   $res = $this->Modelo_blog->act($this->input->post('i'), array('is_active' => 0 ));
+   $this->output->set_content_type('application/json')
+   ->set_output(json_encode($res));
+
+ }
+
+
+ public function get_cat_blog()
+ {
+   $res = $this->Modelo_blog->get_cat($this->input->post('i'));
+   $this->output->set_content_type('application/json')
+   ->set_output(json_encode($res));
 
  }
 

@@ -56,6 +56,8 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['login/registro'] = 'login/registrar_vista';
 $route['usuario/'.$this->uri->segment(2)] = 'usuario/usuario/'.$this->uri->segment(2);
+$route['usuario/get_sol'] = 'usuario/get_sol';
+$route['usuario/get_usu'] = 'usuario/get_usu';
 
 
 $route['entrada/'.$this->uri->segment(2)] = 'blog/get_blog/'.$this->uri->segment(2);

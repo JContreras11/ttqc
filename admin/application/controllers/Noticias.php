@@ -43,6 +43,8 @@ class Noticias extends CI_Controller
       	$crud->display_as('img_new','Imagen');
 
         $crud->field_type('is_active', 'true_false',1);
+        $crud->field_type('des_new', 'string');
+        $crud->field_type('tags_new', 'string');
 
 
 

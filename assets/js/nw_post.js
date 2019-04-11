@@ -2,24 +2,32 @@ $(document).ready(function () {
   $('#nwPost').submit(function (e) {
     e.preventDefault();
 
-    var formxx = $(this);
-    var formdata = false;
+  if ($('#accion').val() != 'edita') {
 
-    if (window.FormData){
-        formdata = new FormData(formxx[0]);
+
+      var formxx = $(this);
+      var formdata = false;
+
+      if (window.FormData){
+          formdata = new FormData(formxx[0]);
+      }
+
+      $.ajax({
+        url:base+'blog/ins',
+        data: formdata ? formdata : formxx.serialize(),
+        contentType : false,
+        processData : false,
+        type:'post',
+        success: function (data) {
+            location.href=base+'entrada/'+data;
+            $('#myModal').modal('hide');
+        },
+      })
+
+
     }
 
-    $.ajax({
-      url:base+'blog/ins',
-      data: formdata ? formdata : formxx.serialize(),
-      contentType : false,
-      processData : false,
-      type:'post',
-      success: function (data) {
-          location.href=base+'entrada/'+data;
-          $('#myModal').modal('hide');
-      },
-    })
+
   })
 })
 
@@ -29,6 +37,9 @@ function make_url(value) {
   $('#url').val(value)
 }
 
+
+
+  
 function utfdecode(s) {
       var r = s.toLowerCase();
           r = r.trim();

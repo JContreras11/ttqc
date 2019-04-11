@@ -78,7 +78,7 @@ class Login extends CI_Controller
       'tel_usu' => $this->input->post('tlf'),
       'is_active' => 1,
       'ide_tip_usu' => 2,
-      // 'img_usu' => $this->input->post(''),
+      // 'img_usu' => $this->input->post(''), TODO: imagen ramdom
       // 'fb_usu' => $this->input->post(''),
       // 'ig_usu' => $this->input->post(''),
       // 'tw_usu' => $this->input->post(''),

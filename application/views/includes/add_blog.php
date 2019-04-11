@@ -22,15 +22,17 @@
                   <fieldset>
 
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Titutlo" id="title" autofocus name="tit" required>
+                        <input type="text" class="form-control" placeholder="Título" id="title" autofocus name="tit" required>
                         <input type="hidden" class="form-control" id="url" name="url">
+                        <input type="hidden" class="form-control" id="accion" name="accion">
+                        <input type="hidden" class="form-control" id="id_b" name="id_b">
                     </div>
                     <div class="form-group">
-                        <textarea type="text" class="form-control" placeholder="Mini Descripción"  name="min" required></textarea>
+                        <textarea type="text" class="form-control" placeholder="Mini Descripción" id="min"  name="min" required></textarea>
                     </div>
 
                     <div class="form-group">
-                        <textarea type="text" class="form-control" id="summernote" name="cont" required></textarea>
+                        <textarea type="text" class="form-control" id="summernote" name="cont"  required></textarea>
                     </div>
 
                     <div class="form-group">
@@ -39,15 +41,15 @@
                     </div>
 
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Tags... ejm: #amor, #encuentro, #familia..." name="tags" >
+                        <input type="text" class="form-control" id="tags" placeholder="Tags... ejm: #amor, #encuentro, #familia..." name="tags" >
                     </div>
 
                     <div class="form-group">
                       <div class="switch-wrap d-flex justify-content-between">
                           <p>No Mostrar Correo</p>
-                          <div class="primary-checkbox">
-                            <input type="checkbox" name="priv" id="priv" checked>
-                            <label for="default-checkbox"></label>
+                          <div class="primary-checkbox" id="labpriv">
+                            <input type="checkbox" name="priv" id="priv" >
+                            <label for="default-checkbox" ></label>
                           </div>
                         </div>
                     </div>
@@ -96,6 +98,7 @@
 <script type="text/javascript">
 
   var base = '<?= base_url() ?>'
+  const section = '<?= $this->uri->segment(1) ?>'
 
 
   $(document).ready(function () {
@@ -106,13 +109,14 @@
               width: 'resolve' // need to override the changed default
           });
 
-        $('#summernote').wysihtml5({
-          toolbar: {
-                "fa": true
-                }
+          // if (section !== 'usuario') {
+            $('#summernote').wysihtml5({
+              toolbar: {
+                    "fa": true
+                    }
 
-            });
-
+                });
+          // }
 
             $(document).on('change', '.btn-file :file', function() {
                 var input = $(this),
@@ -159,6 +163,14 @@
                     make_url($(this).val())
                   })
 
+
+                  $('#labpriv').click(function () {
+                      if ($('#priv').is(':checked')) {
+                            $('#priv')[0].checked = false
+                      } else {
+                            $('#priv')[0].checked = true
+                      }
+                  })
 
   })
 

@@ -11,6 +11,8 @@
 
         <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
           <ul class="navbar-nav">
+            <li class="footer-social"><a class="social-head" href="https://www.facebook.com/TeTengoQueContar/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+            <li class="footer-social"><a class="social-head" href="https://www.instagram.com/ttengoquecontar/" target="_blank"><i class="fa fa-instagram"></i></a></li>
             <?php if ($this->session->userdata('logged_in')): ?>
               <li><a href="javascript:void(0)" data-toggle="modal" data-target="#myModal"> + Escribir</a></li>
             <?php endif; ?>

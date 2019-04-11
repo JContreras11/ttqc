@@ -1,14 +1,14 @@
 
 
 <!-- Start top-section Area -->
-<section class="top-section-area section-gap" style="padding: 3% 0">
+<section class="top-section-area section-gap bgDeg" style="padding: 50px 0 20px 0" >
     <div class="container">
         <div class="row justify-content-between align-items-center d-flex">
             <div class="col-lg-8 top-left">
-                <h1 class="text-white mb-20"><?= $cat[0]->nom_cat ?></h1>
+                <h1  style="color:#000;" class=" mb-20"><?= $cat[0]->nom_cat ?></h1>
                 <ul>
-                    <li><a href="category.html">Categoria</a><span class="lnr lnr-arrow-right"></span></li>
-                    <li><a href="<?= base_url() ?>categoria/<?= $cat[0]->url_cat ?>"><?= $cat[0]->nom_cat ?></a></li>
+                    <li><a style="color:#000;" href="<?= base_url() ?>">Categoria</a><span class="lnr lnr-arrow-right"></span></li>
+                    <li><a style="color:#000;" href="<?= base_url() ?>categoria/<?= $cat[0]->url_cat ?>"><?= $cat[0]->nom_cat ?></a></li>
                 </ul>
             </div>
         </div>
@@ -38,7 +38,7 @@
                             <div class="detail">
                                 <a href="<?= base_url()?>entrada/<?= $v->url_blog ?>"><h4 class="pb-20"><?= $v->tit_blog ?></h4></a>
                                 <p>
-                                    <?= $v->min_des_blog ?>
+                                    <?= substr($v->min_des_blog,0,150) ?>...
                                 </p>
                                 <p class="footer pt-20">
                                 <i class="fa fa-heart-o" aria-hidden="true"></i>

@@ -8,6 +8,8 @@ class Modelo_blog extends CI_Model
 
   public function get_blog($url)
   {
+
+
     $res = $this->db->select('ide_blog,tit_blog,des_blog,tags_blog,min_des_blog,img_blog,nom_usu,img_usu,fech_blog,users.ema_usu,blog.ide_usu,blog.ide_est_blog')
                     ->from('blog')
                     ->where('url_blog',$url)
@@ -31,7 +33,7 @@ class Modelo_blog extends CI_Model
 
   public function get_cat($id)
   {
-    $res = $this->db->select('nom_cat,url_cat')->from('blog_cat')->where('ide_blog',$id)->join('categories','blog_cat.ide_cat = categories.ide_cat')->get();
+    $res = $this->db->select('categories.ide_cat,nom_cat,url_cat')->from('blog_cat')->where('ide_blog',$id)->join('categories','blog_cat.ide_cat = categories.ide_cat')->get();
     if ($res) {
       return $res->result();
     } else {
@@ -54,8 +56,8 @@ class Modelo_blog extends CI_Model
   public function ins($data)
   {
     if ($this->db->insert('blog',$data)) {
-      $id =  $this->db->insert_id();
-      $res = $this->db->select('url_blog')->where('ide_blog',$id)->get('blog')->result()[0]->url_blog;
+      $res['id'] =  $this->db->insert_id();
+      $res['url'] = $this->db->select('url_blog')->where('ide_blog',$res['id'])->get('blog')->result()[0]->url_blog;
 
       return $res;
     } else {
@@ -74,6 +76,15 @@ class Modelo_blog extends CI_Model
 
   }
 
+  public function upd_cat($id,$data)
+  {
+        $this->db->where('ide_blog',$id)->delete('blog_cat');
+    if ($this->db->insert_batch('blog_cat',$data)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   public function add_history($data)
   {
@@ -88,6 +99,18 @@ class Modelo_blog extends CI_Model
   public function action($table, $data)
   {
     if ($this->db->insert($table,$data)) {
+      return true;
+    } else {
+      return false;
+    }
+
+  }
+
+
+  public function act($id,$data)
+  {
+        $this->db->where('ide_blog',$id);
+    if ($this->db->update('blog',$data)) {
       return true;
     } else {
       return false;

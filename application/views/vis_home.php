@@ -16,8 +16,8 @@
             <div class="col-lg-6 flex-row d-flex meta-right no-padding justify-content-end">
               <div class="col-lg-4 col-sm-12 footer-social">
                 <!-- <a href="#"><i class="fa fa-facebook"></i></a> -->
-                <a href="https://www.instagram.com/ttengoquecontar/" target="_blank"><i class="fa fa-twitter"></i></a>
-                <!-- <a href="#"><i class="fa fa-instagram"></i></a> -->
+                <!-- <a href="https://www.instagram.com/ttengoquecontar/" target="_blank"><i class="fa fa-instagram"></i></a> -->
+                <!-- <a href="#"><i class="fa fa-twitter"></i></a> -->
               </div>
             </div>
           </div>
@@ -31,55 +31,34 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <center>
-              <h1>¡TTQC!</h1>
+            <center class="titHome">
+              <h1>¡T.T.Q.C!</h1>
             </center>
           </div>
+
           <div class="col-md-6">
-                <p>Somos una plataforma transmedia que cree en el potencial narrativo tan inmenso que pueden tener ‘simples’ relatos cotidianos. ¡Te tengo que contar! Es un proyecto de escritura colaborativa en la que los jóvenes bogotanos podrán aportar sus historias del día a día, para así ir creando un banco de historias, que a su vez puedan ser adaptadas por jóvenes realizadores audiovisuales, guionistas, escritores, etc, en guiones de ficción.</p>
+                <p class="textHome">Somos una plataforma transmedia que cree en el potencial narrativo tan grande que pueden tener ‘simples’ relatos cotidianos.</p>
+                <p class="textHome">
+                  <center class="textTt">  <strong>¡Te tengo que contar! </strong></center>
+                </p>
+                <p class="textHome">  Es un proyecto de escritura colaborativa en la que los jóvenes bogotanos podrán aportar sus historias del día a día, para así ir creando un banco de historias, que a su vez puedan ser adaptadas por jóvenes realizadores audiovisuales, guionistas, escritores, etc, en guiones de ficción.  </p>
           </div>
           <div class="col-md-6">
-                <iframe src="https://giphy.com/embed/ir9OEpgbjzzPdsWypx" width="100%" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/question-ir9OEpgbjzzPdsWypx"></a></p>
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/d4KX0QAMgHA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Start category Area -->
-    <section class="category-area section-gap" id="news" style="padding-top: 20px;    padding-bottom: 20px;">
-      <div class="container">
-        <div class="row d-flex justify-content-center">
-          <div class="menu-content pb-70 col-lg-8">
-            <div class="title text-center">
-              <h1 class="mb-10">Noticias</h1>
-              <p>Noticias de la semana que te pueden interesar</p>
-            </div>
-          </div>
-        </div>
 
-        <div class="active-cat-carusel">
-
-          <?php foreach ($news as $k => $v): ?>
-            <div class="item single-cat">
-              <img src="<?= base_url() ?>uploads/<?= $v->img_new ?>" alt="" style="max-height: 227px;">
-              <p class="date"><?= date('d-m-Y', strtotime($v->tit_new)) ?></p>
-              <h4><a href="<?= $v->url_new ?>" target="_blank"><?= $v->tit_new ?></a></h4>
-              <p><?= $v->des_new ?></p>
-            </div>
-          <?php endforeach; ?>
-
-        </div>
-      </div>
-    </section>
-    <!-- End category Area -->
 
     <!-- Start travel Area -->
-    <section class="travel-area section-gap" id="travel" style=" padding-top: 20px; padding-bottom: 20px;">
+    <section class="travel-area section-gap seccat" id="travel" style="padding-top: 20px;padding-bottom: 40px;margin-top: 20px;">
       <div class="container">
         <div class="row d-flex justify-content-center">
-          <div class="menu-content pb-70 col-lg-8">
+          <div class="menu-content pb-20 col-lg-8">
             <div class="title text-center">
-              <h1 class="mb-10">CATEGORIAS</h1>
+              <h1 class="mb-10" style="color:#fff;">CATEGORÍAS</h1>
               <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua.</p> -->
             </div>
           </div>
@@ -117,20 +96,19 @@
     <!-- End travel Area -->
 
     <!-- Start fashion Area -->
-    <section class="fashion-area section-gap" id="fashion">
+    <section class="fashion-area section-gap" id="fashion" style="padding-top: 40px;padding-bottom: 10px;border-bottom: solid 1px #f1f1f1;">
       <div class="container">
         <div class="row d-flex justify-content-center">
-          <div class="menu-content pb-70 col-lg-8">
+          <div class="menu-content pb-20 col-lg-8">
             <div class="title text-center">
-              <h1 class="mb-10">Ultimas Entradas</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua.</p>
+              <h1 class="mb-10">Ultimas Historias</h1>
             </div>
           </div>
         </div>
-        <div class="row">
+        <div class="active-cat-carusel  ">
           <?php foreach ($blog as $k => $v): ?>
-
-            <div class="col-lg-3 col-md-6 single-fashion">
+<!--
+            <div class="col-lg-3 col-md-6 single-fashion lasthist ">
               <img class="img-fluid" src="<?= base_url() ?>uploads/<?= $v->img_blog  ?>" alt="">
               <p class="date"><?= $v->fech_blog ?></p>
               <h4><a href="<?= base_url() ?>entrada/<?= $v->url_blog?>"><?= $v->tit_blog  ?></a></h4>
@@ -141,7 +119,18 @@
                   <p><span class="lnr lnr-heart"></span> <?= $v->likes < 10 && $v->likes > 0 ? '0'.$v->likes : $v->likes ?> Likes</p>
                   <p><span class="lnr lnr-bubble"></span> <?= $v->comments ?> Comentarios</p>
                 </div>
+              </div> -->
+
+              <div class="item single-cat singleBlog">
+                <img src="<?= base_url() ?>uploads/<?= $v->img_blog ?>" alt="" style="max-height: 227px;">
+                <p class="date"><?= date('d-m-Y', strtotime($v->fech_blog)) ?></p>
+                <h4 class="titsingleblog"><a href="<?= base_url() ?>entrada/<?= $v->url_blog ?>" target="_blank"><?= $v->tit_blog ?></a></h4>
+                <div class="meta-bottom d-flex justify-content-between likesandcomm">
+                  <p><span class="lnr lnr-heart"></span> <?= $v->likes < 10 && $v->likes > 0 ? '0'.$v->likes : $v->likes ?> Likes</p>
+                  <p><span class="lnr lnr-bubble"></span> <?= $v->comments ?> Comentarios</p>
+                </div>
               </div>
+
 
           <?php endforeach; ?>
 
@@ -151,8 +140,35 @@
     <!-- End fashion Area -->
 
 
+    <!-- Start category Area -->
+    <section class="category-area section-gap" id="news" style="padding-top: 50px;padding-bottom: 20px;">
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div class="menu-content pb-20 col-lg-8">
+            <div class="title text-center">
+              <h1 class="mb-10">Noticias</h1>
+              <p style="color:#000;">Noticias de la semana que te pueden interesar</p>
+            </div>
+          </div>
+        </div>
 
-        <?php $this->load->view('includes/add_blog') ?>
+        <div class="active-cat-carusel">
+
+          <?php foreach ($news as $k => $v): ?>
+            <div class="item single-cat">
+              <img src="<?= base_url() ?>uploads/<?= $v->img_new ?>" alt="" style="max-height: 227px;">
+              <p class="date"><?= date('d-m-Y', strtotime($v->tit_new)) ?></p>
+              <h4><a href="<?= $v->url_new ?>" target="_blank"><?= $v->tit_new ?></a></h4>
+              <div class="desNot"><?= substr($v->des_new,0,150) ?>...</div>
+            </div>
+          <?php endforeach; ?>
+
+        </div>
+      </div>
+    </section>
+    <!-- End category Area -->
+
+    <?php $this->load->view('includes/add_blog') ?>
 
 
 

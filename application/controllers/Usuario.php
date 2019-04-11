@@ -25,8 +25,7 @@ class Usuario extends CI_Controller
     {
 
 
-      $this->load->view('includes/head');
-      $this->load->view('includes/menu_usu');
+
 
 
       if ( strtolower($usr) === $this->session->userdata('logged_in')['username'] ) {
@@ -49,6 +48,28 @@ class Usuario extends CI_Controller
     }
   }
 
+
+    public function get_sol()
+    {
+      $res = $this->Modelo_usuario->get_sol();
+      $this->output->set_content_type('application/json')
+      ->set_output(json_encode($res));
+    }
+
+    public function get_usu()
+    {
+        $res = $this->Modelo_usuario->get_usu();
+        $this->output->set_content_type('application/json')
+        ->set_output(json_encode($res));
+    }
+
+
+    public function upd()
+    {
+      $res = $this->Modelo_usuario->upd();
+      $this->output->set_content_type('application/json')
+      ->set_output(json_encode($res));
+    }
 
 }
  ?>

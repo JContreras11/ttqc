@@ -30,6 +30,7 @@ class Modelo_cat extends CI_Model
     $res = $this->db->select('blog.*,count(commets.ide_com) as comments,count(likes.ide_like) as likes')
                     ->from('categories')
                     ->where('categories.is_active',1)
+                    ->where('blog.is_active',1)
                     ->join('blog_cat','categories.ide_cat = blog_cat.ide_cat')
                     ->join('blog','blog_cat.ide_blog = blog.ide_blog')
                     ->join('commets','blog.ide_blog = commets.ide_blog','left')

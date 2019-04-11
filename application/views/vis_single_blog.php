@@ -1,4 +1,12 @@
+<style media="screen">
+  .commetUsu{
+    padding-top: 15px;
+    padding-bottom: 20px !important;
+    margin-bottom: 15px;
+    background: #f3f3f3;
 
+  }
+</style>
 
 <!-- Start post Area -->
 <div class="post-wrapper pt-100">
@@ -8,8 +16,8 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="single-page-post">
-                        <img class="img-fluid" src="<?= base_url() ?>uploads/<?= $data[0]->img_blog ?>" alt="">
-                        <div class="top-wrapper ">
+                        <img class="img-fluid" src="<?= base_url() ?>uploads/<?= $data[0]->img_blog ?>" alt="" style="width: 100%;">
+                        <div class="top-wrapper blogsub" >
                             <div class="row d-flex justify-content-between">
                                 <h2 class="col-lg-8 col-md-12 text-uppercase">
                                     <?= $data[0]->tit_blog ?>
@@ -17,7 +25,7 @@
                                 <div class="col-lg-4 col-md-12 right-side d-flex justify-content-end">
                                     <div class="desc">
                                        <h2><?= $data[0]->nom_usu ?></h2>
-                                        <h3><?= $data[0]->fech_blog ?></h3>
+                                        <h3 style="color: #000;"><?= $data[0]->fech_blog ?></h3>
                                     </div>
                                     <div class="user-img">
                                         <img src="<?= $data[0]->img_usu != '' ? $data[0]->img_usu : 'default_avatar.png' ?>" alt="">
@@ -38,7 +46,7 @@
                           <?php endif; ?>
 
                         </div>
-                        <div class="single-post-content">
+                        <div class="single-post-content brdCont">
 
                           <?= $data[0]->des_blog ?>
 
@@ -51,16 +59,16 @@
                         <?php endif; ?>
 
                         </div>
-                        <div class="bottom-wrapper">
-                            <div class="row">
+                        <div class="bottom-wrapper" style="padding: 8px 0 0 0px;">
+                            <div class="row" style=" padding: 0 20px; font-size: 16px;">
                                 <a href="javascript:void(0)" class="acction" data-action="like" idr="<?= $data[0]->ide_blog ?>">
-                                  <div class="col-lg-4 single-b-wrap col-md-12">
+                                  <div class="">
                                       <i class="fa fa-heart-o" aria-hidden="true"></i>
                                        Like
                                   </div>
                                 </a>
                                 <div class="col-lg-4 single-b-wrap col-md-12">
-                                    <i class="fa fa-comment-o" aria-hidden="true"></i> <?= count($com) ?> comments
+                                    <i class="fa fa-comment-o" aria-hidden="true"></i> <span id="ncom"><?= count($com) ?></span> comments
                                 </div>
                                 <!-- <div class="col-lg-4 single-b-wrap col-md-12">
                                     <ul class="social-icons">
@@ -101,116 +109,39 @@
                         <!-- End nav Area -->
 
                         <!-- Start comment-sec Area -->
-                        <?php if (count($com) > 0): ?>
-                          <section class="comment-sec-area pt-80 pb-80">
+                          <section class="comment-sec-area pt-20 pb-10">
                             <div class="container">
-                                <div class="row flex-column">
-                                    <h5 class="text-uppercase pb-80">05 Comments</h5>
+                                <div class="row flex-column" id="commentArea">
                                     <br>
-                                    <div class="comment-list">
-                                        <div class="single-comment justify-content-between d-flex">
-                                            <div class="user justify-content-between d-flex">
-                                                <div class="thumb">
-                                                    <img src="img/asset/c1.jpg" alt="">
-                                                </div>
-                                                <div class="desc">
-                                                    <h5><a href="#">Emilly Blunt</a></h5>
-                                                    <p class="date">December 4, 2017 at 3:12 pm </p>
-                                                    <p class="comment">
-                                                        Never say goodbye till the end comes!
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="reply-btn">
-                                                   <a href="" class="btn-reply text-uppercase">reply</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="comment-list left-padding">
-                                        <div class="single-comment justify-content-between d-flex">
-                                            <div class="user justify-content-between d-flex">
-                                                <div class="thumb">
-                                                    <img src="img/asset/c2.jpg" alt="">
-                                                </div>
-                                                <div class="desc">
-                                                    <h5><a href="#">Emilly Blunt</a></h5>
-                                                    <p class="date">December 4, 2017 at 3:12 pm </p>
-                                                    <p class="comment">
-                                                        Never say goodbye till the end comes!
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="reply-btn">
-                                                   <a href="" class="btn-reply text-uppercase">reply</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="comment-list left-padding">
-                                        <div class="single-comment justify-content-between d-flex">
-                                            <div class="user justify-content-between d-flex">
-                                                <div class="thumb">
-                                                    <img src="img/asset/c3.jpg" alt="">
-                                                </div>
-                                                <div class="desc">
-                                                    <h5><a href="#">Emilly Blunt</a></h5>
-                                                    <p class="date">December 4, 2017 at 3:12 pm </p>
-                                                    <p class="comment">
-                                                        Never say goodbye till the end comes!
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="reply-btn">
-                                                   <a href="" class="btn-reply text-uppercase">reply</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="comment-list">
-                                        <div class="single-comment justify-content-between d-flex">
-                                            <div class="user justify-content-between d-flex">
-                                                <div class="thumb">
-                                                    <img src="img/asset/c4.jpg" alt="">
-                                                </div>
-                                                <div class="desc">
-                                                    <h5><a href="#">Emilly Blunt</a></h5>
-                                                    <p class="date">December 4, 2017 at 3:12 pm </p>
-                                                    <p class="comment">
-                                                        Never say goodbye till the end comes!
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="reply-btn">
-                                                   <a href="" class="btn-reply text-uppercase">reply</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="comment-list">
-                                        <div class="single-comment justify-content-between d-flex">
-                                            <div class="user justify-content-between d-flex">
-                                                <div class="thumb">
-                                                    <img src="img/asset/c5.jpg" alt="">
-                                                </div>
-                                                <div class="desc">
-                                                    <h5><a href="#">Emilly Blunt</a></h5>
-                                                    <p class="date">December 4, 2017 at 3:12 pm </p>
-                                                    <p class="comment">
-                                                        Never say goodbye till the end comes!
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="reply-btn">
-                                                   <a href="" class="btn-reply text-uppercase">reply</a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <?php if (count($com) > 0): ?>
+                                      <?php foreach ($com as $k => $v): ?>
+                                          <div class="comment-list commetUsu" >
+                                              <div class="single-comment justify-content-between d-flex">
+                                                  <div class="user justify-content-between d-flex">
+                                                      <div class="thumb">
+                                                          <img src="<?= base_url() ?>uploads/<?= $v->img_usu ?>" alt="">
+                                                      </div>
+                                                      <div class="desc">
+                                                          <h5><a href="<?= base_url() ?>usuario/<?= $v->nom_usu ?>"><?= $v->nom_usu ?></a></h5>
+                                                          <p class="comment">
+                                                              <?= $v->des_com ?>
+                                                          </p>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      <?php endforeach; ?>
+                                    <?php endif; ?>
+
+
                                 </div>
                             </div>
-                        </section>
-                        <?php endif; ?>
+                          </section>
 
                         <!-- End comment-sec Area -->
 
                         <!-- Start commentform Area -->
-                        <section class="commentform-area  pb-120 pt-80 mb-100">
+                        <section class="commentform-area  pb-100 pt-20 mb-100">
                             <div class="container">
                                 <h5 class="text-uppercas pb-50">Deja tu comentario</h5>
                                 <div class="row flex-row d-flex">
@@ -221,8 +152,8 @@
 
                                     </div> -->
                                     <div class="col-lg-12">
-                                        <textarea class="form-control mb-10" name="message" cols="2" rows="2" style="height: 50px" placeholder="Comentario" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
-                                        <a class="primary-btn mt-20" href="#">Comentar</a>
+                                        <textarea id="commentText" class="form-control mb-10" name="message" cols="2" rows="2" style="height: 50px" placeholder="Comentario" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required="" idr="<?= $data[0]->ide_blog ?>"></textarea>
+                                        <a class="primary-btn mt-20" href="javascript:void(0)" id="commentButton">Comentar</a>
                                     </div>
                                 </div>
                             </div>
@@ -249,7 +180,7 @@
   <div class="modal-dialog " style="max-width: 50%;">
 
     <!-- Modal content-->
-    <div class="modal-content">
+    <div class="modal-content" style="background: #ff6767;">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Usar historia</h4>
@@ -264,11 +195,23 @@
                   <div class="row">
                     <?php if ($data[0]->ide_est_blog == 1): ?>
                       <div class="col-md-12">
-                        <h3><?= $data[0]->ema_usu ?></h3>
+                        <center style=" font-size: 24px; color: #fff;"><strong>¡Gracias por creer en el poder de los relatos cotidianos!</strong></center>
+                        <br>
+                        <p style="text-align:center; color:#fff;">
+                            Ahora como guionista tienes el derecho de adaptar, modificar, extender,  o reelaborar este relato. Recuerda que debes hacer un reconocimiento al autor original del escrito en caso de que lo utilices. ¡Este es su contacto, para que puedan intercambiar más ideas!
+                        </p>
+                          <center style="color:#fff;">
+                            <h3 style="color:#fff;"><?= $data[0]->ema_usu ?></h3>
+                          </center>
                       </div>
                     <?php else: ?>
                       <div class="col-md-12">
-                        <p>Mensaje :D</p>
+                        <center style=" font-size: 24px; color: #fff;"><strong>¡Gracias por creer en el poder de los relatos cotidianos!</strong></center>
+                        <br>
+                        <p style="text-align:center; color:#fff;">
+                            Ahora como guionista tienes el derecho de adaptar, modificar, extender, o reelaborar este relato.  Recuerda que debes hacer un reconocimiento al autor original del escrito en caso de que lo utilices; en este caso, como el autor es anónimo, puedes darle un reconocimiento a www.tetengoquecontar.com como plataforma web que distribuyó el relato de dónde surgió la inspiración para tu guion de ficción.
+                        </p>
+
                       </div>
                     <?php endif; ?>
                   </div>

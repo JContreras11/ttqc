@@ -41,7 +41,7 @@ $(document).ready(function(){
         autoplay:true,
         nav:true,
         navText: ["<span class='lnr lnr-arrow-up'></span>","<span class='lnr lnr-arrow-down'></span>"],
-        responsive:{    
+        responsive:{
         0:{
           items: 1
         },
@@ -61,29 +61,15 @@ $(document).ready(function(){
       autoplay:true,
       nav:true,
       navText: ["<span class='lnr lnr-arrow-up'></span>","<span class='lnr lnr-arrow-down'></span>"],
-      items : 2, 
+      items : 2,
       itemsDesktop : [992,2],
-      itemsDesktopSmall : [768,2], 
-      itemsTablet: [480,1], 
+      itemsDesktopSmall : [768,2],
+      itemsTablet: [480,1],
       itemsMobile : [320,1]
   });
 
 
-    $('.active-recent-carusel').owlCarousel({
-        items:1,
-        loop:true,
-        autoplay:true,
-        dots: true,
-        0:{
-          items: 1
-        },
-        480:{
-          items: 1
-        },
-        769:{
-          items: 1
-        }
-    });
+
 
 
 
@@ -96,8 +82,8 @@ $(document).ready(function(){
   .on('click',function(event) {
   // On-page links
   if (
-    location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
-    && 
+    location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+    &&
     location.hostname == this.hostname
   ) {
     // Figure out element to scroll to
@@ -162,6 +148,6 @@ $(document).ready(function(){
 
       $(document).ready(function() {
           $('#mc_embed_signup').find('form').ajaxChimp();
-      });   
+      });
 
  });

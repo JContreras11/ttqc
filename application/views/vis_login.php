@@ -36,13 +36,13 @@
 </style>
 
 
-<div class="cls-content">
+<div class="cls-content" style=" padding-bottom: 40px;">
     <div class="cls-content-sm panel">
         <div class="panel-body">
 
-            <div class="mar-ver pad-btm">
+            <div class="mar-ver pad-btm" style=" text-align: center;    margin-bottom: 10px;">
               <!-- logo -->
-                <!-- <img src="<?= base_url() ?>assets/img/brisas-logo.png" alt=""> -->
+                <img src="<?= base_url() ?>assets/img/logo_t.png" alt=""style="width: 90%;margin: 4% 0;" >
                 <h1 class="h3">Incio de Sesion</h1>
             </div>
 
@@ -60,7 +60,7 @@
                 <div class="checkbox pad-btm text-left">
                     <a href="#">Olvide mi contraseña</a>
                 </div>
-                <button class="btn btn-primary btn-lg btn-block" type="submit">Iniciar</button>
+                <button class="btn btn-primary btn-lg btn-block" type="submit" style="background: #f0907b;border: solid 1px #f0907b; margin: 10px 0;">Iniciar</button>
             </form>
 
             <div class="panel-footer">

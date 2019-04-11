@@ -26,15 +26,15 @@
     <?php endif; ?>
 
 
-    <div class="single_widget cat_widget">
-        <h4 class="text-uppercase pb-20">Categorias</h4>
+    <div class="single_widget cat_widget colobg">
+        <h4 class="text-uppercase pb-20">Categorías</h4>
         <ul id="cata">
 
         </ul>
     </div>
 
     <div class="single_widget recent_widget">
-        <h4 class="text-uppercase pb-20">Ultimos Post</h4>
+        <h4 class="text-uppercase pb-20">Ultimos Posts</h4>
         <div class="active-recent-carusel" id="asiBlog">
 
         </div>
