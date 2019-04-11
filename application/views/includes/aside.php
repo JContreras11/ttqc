@@ -15,8 +15,10 @@
 
     <?php if ($this->uri->segment(1) == 'entrada'): ?>
       <div class="single_widget about_widget">
-          <img style="width:40px;" src="<?= base_url() ?>uploads/<?= $data[0]->img_usu != '' ? $data[0]->img_usu : 'default_avatar.png' ?>" alt="">
-          <h2 class="text-uppercase"><?= $data[0]->nom_usu ?></h2>
+          <a href="<?= base_url() ?>usuario/<?= $data[0]->nom_usu ?>">
+            <img style="max-width: 150px;" src="<?= base_url() ?>uploads/<?= $data[0]->img_usu ?>" alt="">
+            <h2 class="text-uppercase"><?= $data[0]->nom_usu ?></h2>
+          </a>
           <div class="social-link">
               <a href="#" style="width:40px;" ><i class="fa fa-facebook social-i" aria-hidden="true"></i></a>
               <a href="#" style="width:40px;" ><i class="fa fa-instagram social-i" aria-hidden="true"></i></a>

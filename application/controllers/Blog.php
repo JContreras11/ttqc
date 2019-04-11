@@ -26,6 +26,8 @@ class Blog extends CI_Controller
                 $data['data'] = $res;
                 $data['cat'] = $this->Modelo_blog->get_cat($res[0]->ide_blog);
                 $data['com'] = $this->Modelo_blog->get_com($res[0]->ide_blog);
+                $data['like'] = $this->Modelo_blog->haveLike($res[0]->ide_blog);
+
 
                 $this->load->view('includes/head');
                 $this->load->view('includes/menu');
@@ -38,7 +40,7 @@ class Blog extends CI_Controller
             }
 
       }else {
-        redirect('login','refresh');
+        redirect('login/red/'.$url,'refresh');
       }
 
 
@@ -265,6 +267,15 @@ class Blog extends CI_Controller
      if ($action === 'like') {
        $table = 'likes';
        $data  = array('ide_usu' => $sess['id'] ,'ide_blog' => $this->input->post('id'), );
+
+       if ($this->Modelo_blog->haveLike($this->input->post('id'))) {
+          $this->Modelo_blog->unLike($this->input->post('id'));
+          $res = array('unlike' => true );
+       } else {
+         $this->Modelo_blog->action($table,$data);
+         $res = true;
+       }
+
      }
 
      if ($action === 'comment') {
@@ -276,10 +287,10 @@ class Blog extends CI_Controller
          'imagen' => $sess['imagen'],
         );
 
+        $this->Modelo_blog->action($table,$data);
      }
 
 
-      $this->Modelo_blog->action($table,$data);
      $this->output->set_content_type('application/json')
      ->set_output(json_encode($res));
 

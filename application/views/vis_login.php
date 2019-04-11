@@ -52,6 +52,10 @@
 
             <form class="" id="frm-log" method="post">
                 <div class="form-group">
+                  <?php if (isset($url)): ?>
+                    <input type="hidden" class="form-control" id="ur" value="<?= $url ?>">
+                  <?php endif; ?>
+
                     <input type="text" class="form-control" placeholder="Username" autofocus name="usr" required>
                 </div>
                 <div class="form-group">
@@ -77,5 +81,6 @@
 
 <script type="text/javascript">
   const base_url = '<?= base_url() ?>'
+  const red = $('#ur').val();
 </script>
 <script src="<?= base_url() ?>assets/js/log.js" charset="utf-8"></script>

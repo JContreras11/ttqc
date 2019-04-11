@@ -6,6 +6,28 @@
     background: #f3f3f3;
 
   }
+
+
+  .img-comm{
+    margin: 0 -9px 0 15px;
+    max-width: 60px;
+
+    border-radius: 100%;
+  }
+
+
+.thumb{
+    border-right: solid 1px #ef8872;
+    padding-right: 14px;
+}
+
+.inuse{
+  background: #fcee21;
+  background: -moz-linear-gradient(135deg, #fcee21 0%,#009245 100%);
+  background: -webkit-linear-gradient(135deg, #fcee21 0%,#009245 100%);
+  background: linear-gradient(135deg, #fcee21 0%,#009245 100%);
+}
+
 </style>
 
 <!-- Start post Area -->
@@ -53,7 +75,7 @@
                           <?php if ($this->session->userdata('logged_in')['id'] != $data[0]->ide_usu): ?>
 
                           <center>
-                            <a class="primary-btn mt-20" href="javascript:void(0)" data-toggle="modal" data-target="#mySolicitud" style="padding: 4px 25px;" >Usar esta historia</a>
+                            <a class="primary-btn mt-20" id="use" idr="<?= $data[0]->ide_usu ?>" ids="<?= $data[0]->ide_blog ?>" href="javascript:void(0)" data-toggle="modal" data-target="#mySolicitud" style="padding: 4px 25px;" >Usar esta historia</a>
                           </center>
 
                         <?php endif; ?>
@@ -61,10 +83,17 @@
                         </div>
                         <div class="bottom-wrapper" style="padding: 8px 0 0 0px;">
                             <div class="row" style=" padding: 0 20px; font-size: 16px;">
-                                <a href="javascript:void(0)" class="acction" data-action="like" idr="<?= $data[0]->ide_blog ?>">
+                                <a href="javascript:void(0)" class="acction <?= $like ? 'liked' : '' ?>" data-action="like" idr="<?= $data[0]->ide_blog ?>">
                                   <div class="">
+                                    <?php if ($like): ?>
+                                      <i class="fa fa-heart liked" aria-hidden="true"></i>
+                                      <span>Unlike</span>
+
+                                    <?php else: ?>
                                       <i class="fa fa-heart-o" aria-hidden="true"></i>
-                                       Like
+                                      <span>Like</span>
+
+                                    <?php endif; ?>
                                   </div>
                                 </a>
                                 <div class="col-lg-4 single-b-wrap col-md-12">
@@ -119,7 +148,7 @@
                                               <div class="single-comment justify-content-between d-flex">
                                                   <div class="user justify-content-between d-flex">
                                                       <div class="thumb">
-                                                          <img src="<?= base_url() ?>uploads/<?= $v->img_usu ?>" alt="">
+                                                          <img src="<?= base_url() ?>uploads/<?= $v->img_usu ?>" alt="" class="img-comm">
                                                       </div>
                                                       <div class="desc">
                                                           <h5><a href="<?= base_url() ?>usuario/<?= $v->nom_usu ?>"><?= $v->nom_usu ?></a></h5>

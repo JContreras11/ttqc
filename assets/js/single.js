@@ -1,14 +1,13 @@
 $(function () {
 
-  $('#solPost').submit(function (e) {
-    e.preventDefault()
+  $('#use').click(function (e) {
     $.ajax({
               url: `${base}blog/add_history`,
-              data: $(this).serialize(),
+              data: {id_u: $(this).attr('idr'), id_b: $(this).attr('ids')},
               type:"post",
               success: function(data) {
-                limpiarForm('solPost');
-                $('#mySolicitud').modal('hide');
+                $('#use').addClass('inuse');
+                $('#use').html('<i class="fa fa-check"></i>');
               }
           });
       })
@@ -18,9 +17,20 @@ $(function () {
       $('.acction').click(function (e) {
           var _this = $(this)
           $.post(`${base}blog/acction`,{action: 'like', id: $(this).attr('idr')}, function (data) {
-              _this.addClass('liked')
-              _this.find('i').removeClass('fa fa-heart-o')
-              _this.find('i').addClass('fa fa-heart liked')
+
+              if (data.unlike && data.unlike != undefined ) {
+                _this.removeClass('liked')
+                _this.find('i').removeClass('fa fa-heart liked')
+                _this.find('i').addClass('fa fa-heart-o')
+                _this.find('span').text('Like')
+
+              } else {
+                _this.find('span').text('Unlike')
+                _this.addClass('liked')
+                _this.find('i').removeClass('fa fa-heart-o')
+                _this.find('i').addClass('fa fa-heart liked')
+              }
+
           })
       })
 
@@ -38,7 +48,7 @@ $(function () {
                               <div class="single-comment justify-content-between d-flex">
                                   <div class="user justify-content-between d-flex">
                                       <div class="thumb">
-                                          <img src="${base}uploads/${data.imagen}" alt="">
+                                          <img src="${base}uploads/${data.imagen}" alt="" class="img-comm">
                                       </div>
                                       <div class="desc">
                                           <h5><a href="${base}usuario/${data.username}">${data.username}</a></h5>
@@ -70,14 +80,3 @@ $(function () {
 
 
 })
-
-
-
-function like(id) {
-
-}
-
-
-function comment(id) {
-
-}

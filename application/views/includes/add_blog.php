@@ -106,7 +106,8 @@
         get_cat()
 
         $('#cat').select2({
-              width: 'resolve' // need to override the changed default
+              placeholder: "Seleccione las Categorias",
+              // width: 'resolve' // need to override the changed default
           });
 
           // if (section !== 'usuario') {

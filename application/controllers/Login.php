@@ -22,6 +22,16 @@ class Login extends CI_Controller
 
   }
 
+  public function red($url=null)
+  {
+    $this->load->view('includes/head');
+    $this->load->view('includes/menu');
+    $this->load->view('vis_login',array('url' => $url, ));
+    $this->load->view('includes/footer');
+    $this->load->view('includes/scripts');
+
+  }
+
 
   public function registrar_vista()
   {
@@ -78,7 +88,7 @@ class Login extends CI_Controller
       'tel_usu' => $this->input->post('tlf'),
       'is_active' => 1,
       'ide_tip_usu' => 2,
-      // 'img_usu' => $this->input->post(''), TODO: imagen ramdom
+      'img_usu' => $this->randImg(rand(1,9)),
       // 'fb_usu' => $this->input->post(''),
       // 'ig_usu' => $this->input->post(''),
       // 'tw_usu' => $this->input->post(''),
@@ -106,6 +116,47 @@ class Login extends CI_Controller
      $this->session->unset_userdata('logged_in');
      session_destroy();
      redirect('login', 'refresh');
+   }
+
+
+   public function randImg($num)
+   {
+     switch ($num) {
+       case 1:
+         return 'ava1.png';
+       break;
+
+       case 2:
+         return 'ava2.png';
+       break;
+
+       case 3:
+         return 'ava3.png';
+       break;
+
+       case 4:
+         return 'ava4.png';
+       break;
+
+       case 5:
+         return 'ava5.png';
+       break;
+       case 6:
+         return 'ava6.png';
+       break;
+       case 7:
+         return 'ava7.png';
+       break;
+       case 8:
+         return 'ava8.png';
+       break;
+       case 9:
+         return 'ava9.png';
+       break;
+       default:
+        return 'ava1.png';
+       break;
+     }
    }
 
 

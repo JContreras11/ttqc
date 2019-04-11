@@ -11,7 +11,11 @@ $(function () {
           if (!data) {
               $('#error').fadeIn()
           } else {
-            location.href = `${base_url}usuario/${data}`;
+            if (red != undefined) {
+              location.href = `${base_url}entrada/${red}`;
+            } else {
+              location.href = `${base_url}usuario/${data}`;
+            }
           }
         }
       })

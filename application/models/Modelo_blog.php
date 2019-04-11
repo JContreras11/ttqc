@@ -96,6 +96,27 @@ class Modelo_blog extends CI_Model
 
   }
 
+  public function haveLike($id_blog)
+  {
+      $res = $this->db->get_where('likes', array('ide_usu' =>$this->session->userdata('logged_in')['id'], 'ide_blog' => $id_blog ));
+    if ($res->num_rows() > 0) {
+      return true;
+    } else {
+      return false;
+    }
+
+  }
+
+  public function unLike($id_blog)
+  {      
+    if ($this->db->where(array('ide_usu' =>$this->session->userdata('logged_in')['id'], 'ide_blog' => $id_blog ))->delete('likes')) {
+      return true;
+    } else {
+      return false;
+    }
+
+  }
+
   public function action($table, $data)
   {
     if ($this->db->insert($table,$data)) {
