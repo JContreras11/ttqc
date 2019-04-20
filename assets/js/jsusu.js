@@ -1,5 +1,8 @@
   $(function () {
 
+
+
+
     jalar_data();
     jalar_usu();
     jalar_sol();
@@ -38,35 +41,35 @@
 
     })
 
-
-    $('#frm-edi-usu').submit(function (e) {
-      e.preventDefault();
-
-
-                var formxx = $(this);
-                var formdata = false;
-
-                if (window.FormData){
-                    formdata = new FormData(formxx[0]);
-                }
-
-                $.ajax({
-                  url:base+'blog/upd',
-                  data: formdata ? formdata : formxx.serialize(),
-                  contentType : false,
-                  processData : false,
-                  type:'post',
-                  success: function (data) {
-
-                    location.reload()
-                  },
-                })
-
-
-
-
-
-    })
+    //
+    // $('#frm-edi-usu').submit(function (e) {
+    //   e.preventDefault();
+    //
+    //
+    //             var formxx = $(this);
+    //             var formdata = false;
+    //
+    //             if (window.FormData){
+    //                 formdata = new FormData(formxx[0]);
+    //             }
+    //
+    //             $.ajax({
+    //               url:base+'blog/upd',
+    //               data: formdata ? formdata : formxx.serialize(),
+    //               contentType : false,
+    //               processData : false,
+    //               type:'post',
+    //               success: function (data) {
+    //
+    //                 location.reload()
+    //               },
+    //             })
+    //
+    //
+    //
+    //
+    //
+    // })
 
 
 
@@ -132,6 +135,83 @@
         })
     })
 
+
+
+/*
+
+  Funcion toggle a botono
+
+*/
+
+    $('#editUsu').click(function() {
+
+      $('.form-control').removeAttr('readonly','readonly');
+      //Document
+      //Object
+      //Model
+
+      /* 2 */ $(this).css('display','none');
+      /* 1 */ $('#canUsu').css('display','block')
+
+    })
+
+    $('#canUsu').click(function() {
+      $('.form-control').attr('readonly','readonly');
+      /* 2 */ $(this).css('display','none');
+      /* 1 */ $('#editUsu').css('display','block')
+
+      // hidde
+      // show
+
+    })
+
+
+    //  document.getElementById('frm-edi-usu').addEventListener('submit',function (e) {
+    //     alert('Hola esto es JS ')
+    //
+    //     /*-----------*/
+    //
+    // })
+    //
+    //
+
+
+    $('#frm-edi-usu').submit(function (e) {
+        e.preventDefault();
+
+
+        var formxx = $(this);
+        var formdata = false;
+
+        if (window.FormData){
+            formdata = new FormData(formxx[0]);
+        }
+
+        $.ajax({
+            url: `${base}usuario/upd`,
+            type:'POST',
+            data: formdata ? formdata : formxx.serialize(),
+            contentType : false,
+            processData : false,
+            success: function (data) {
+              Swal.fire({
+                    title: 'OK',
+                    text: 'Usuario actualizado correctamente',
+                    type: 'success',
+                    confirmButtonText: 'OK'
+                  }).then(function () {
+
+                            $('.form-control').attr('readonly','readonly');
+                    /* 2 */ $('#canUsu').css('display','none');
+                    /* 1 */ $('#editUsu').css('display','block')
+
+                    //reciclar codigo
+                    jalar_usu();
+                  })
+            },
+        })
+
+    })
 
 
 
@@ -243,8 +323,14 @@ function jalar_usu(){
        $.each(data,function (i,item) {
          $('#face').val(item.fb_usu)
          $('#ig').val(item.ig_usu)
+         $('#des').val(item.dir_usu)
          $('#twitter').val(item.tw_usu)
          $('#email').val(item.ema_usu)
+
+         $('#imgUsu').attr('src',`${base}uploads/${item.img_usu}`);
+         $('#usuN').text(item.nom_usu);
+         $('#emaU').text(item.ema_usu);
+
        })
 
        $('#grillaSol').html(grill);

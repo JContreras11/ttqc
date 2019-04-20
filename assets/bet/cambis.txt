@@ -1,0 +1,7 @@
+Modifique:
+En main.css
+
+en li, añadi la case perfil
+modique las rows
+Imagen, fecha... esa fila
+el container del header una nueva clase

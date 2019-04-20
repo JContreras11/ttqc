@@ -1,0 +1,268 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?bfxeag');
+  src:  url('fonts/icomoon.eot?bfxeag#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?bfxeag') format('truetype'),
+    url('fonts/icomoon.woff?bfxeag') format('woff'),
+    url('fonts/icomoon.svg?bfxeag#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-heart:before {
+  content: "\e900";
+}
+.icon-comment:before {
+  content: "\e901";
+}
+
+/*  */
+
+.grid-area {
+    display: grid;
+    margin: 0px;
+    grid-template-columns:  20% 80%;
+    grid-template-areas: 'container-nav'
+                         'container-all';
+}
+.container-nav, .container-all
+{
+  width: 100%;
+}
+/* navigation */
+/*  logo*/
+#mainnav-container{
+padding-top: 0;
+float: left;
+position: absolute;
+z-index: 17;
+width: 20%;
+height: 100%;
+background: #fff;
+}
+.profile-wrap img{
+  width: 160px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+/* fin de logo */
+/*  fin de navegacion*/
+/*  header*/
+.perfil li a{
+  position: absolute;
+   right: 20px;
+}
+.default-header {
+  position: inherit !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9
+}
+/* fin de header */
+/* tabla grande */
+#demo-dt-basic{
+  margin-top: 10px;
+  color:#7a878e;
+}
+.row{
+ color:#7a878e;
+}
+.sorting{
+  visibility: inherit;
+}
+
+.label input{
+  margin-left: 5px;
+}
+thead{
+width: 100%;
+position: relative;
+}
+/*  fila 1*/
+th{
+  font-size: 80%;
+}
+.th-text {margin: 0px;}
+.th-img {width: 20%;}
+.th-title {width: 20%;}
+.th-comment {width: 19%; right: 0;}
+.th-likes {width: 13%;}
+.th-fecha {width: 12%;}
+.th-est {width: 5%;}
+.th-weird{ width: 3%;}
+.th-h{visibility: visible;}
+.th-show{visibility: visible;}
+
+/* Fin de fila1 */
+.sorting_1 img{
+  width: 100%;
+  padding: 0px;
+}
+}
+/*fin  */
+@media screen and (max-width:1025px)
+{
+
+/*  Nav*/
+.list-group{
+  padding-top:5px;
+}
+.mnp-desc{
+  font-size: 12px;
+}
+.lim {
+    font-size: 20px;
+}
+/*  Fin*/
+/*Cuadro  */
+.row{
+}
+#demo-dt-basic{
+  font-size: 12px;
+}
+.min-tablet{
+  font-size: 12px;
+}
+/*  Cuadro*/
+}
+
+@media screen and (max-width:992px)
+{
+
+  /*  Navegacion*/
+  .mnp-desc{
+    margin-left: 2px;
+    font-size: 10px;
+  }
+  .lim {
+    font-size: 15px;
+  }
+  /* navegacion */
+  /*  header*/
+  .container-nav{
+    position: relative;
+      z-index: 1;
+      width: 700px;
+  }
+  /* logo */
+  .profile-wrap img{
+    width: 140px;
+  }
+  /* logo */
+  #navbarSupportedContent{
+    z-index: 2;
+    background-color: pink;
+  }
+  /* tabla */
+    .th-show{color: rgb(255,133,133);}
+    .th-comment {width: 5%;}
+    .th-likes {width: 5%;}
+
+  }
+
+
+@media screen and (max-width:790px){
+body{
+  margin:0px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+{
+  /*  Navegacion*/
+  .container-nav{
+
+  }
+  .mnp-desc{
+    margin-left: 4px;
+    font-size: 8px;
+  }
+  /* navegacion */
+  #mainnav-menu{
+    width: 80%;
+    font-size: 12px;
+  }
+  /* logo */
+  .profile-wrap img{
+    width: 140px;
+  }
+  /* logo */
+  /*  FIN nav*/
+  /*  HEADER*/
+  /* .container-1{
+    width: 80%;
+  } */
+  /* HEader */
+/*  TABLA*/
+#demo-dt-basic{
+  margin-left: 10px;
+}
+/* Fin de tabla */
+
+}
+@media screen and (max-width:620px){
+  /* nav */
+
+
+  /*  fin de nav*/
+  #demo-dt-basic_filter label input{
+    width: 150px;
+  }
+  .form-inline{
+    margin-left: 2%;
+  }
+  /*  fila 1*/
+  .th-text {margin: 0px;}
+  .th-img {width: 20%;}
+  .th-title {width: 15%;}
+  .th-comment {width: 15%; right: 0;}
+  .th-likes {width: 5%;}
+  .th-fecha {width: 5%;}
+  .th-est {width: 5%;}
+  .th-weird{ width: 3%;}
+  .th-h{visibility: visible;}
+  .th-show{visibility: visible;}
+
+  /* Fin de fila1 */
+}
+@media screen and (max-width:570px){
+  .row{
+        margin-left: 3% !important;
+  }
+  .row-1.col-sm-12 table{
+    padding: 0px;
+
+  }
+  .th-title {width: 13%;}
+  .th-fecha {width: 5%;}
+    tbody .odd, tbody .even{
+    font-size: 10px;
+  }
+}
+@media screen and (max-width:480px)
+{
+  body{
+    overflow-x: scroll;
+  }
+  .panel-heading{
+    margin: 0px 40px;
+  }
+  .row{
+        margin-left: 10% !important;
+  }
+}

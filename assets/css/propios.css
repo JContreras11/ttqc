@@ -164,10 +164,21 @@ line-height: 1.0;
 
 
 .brdCont{
-  border: solid 1px #c3c3c3;
-  padding: 6px 10px;
+  border: solid 1px #f5f5f5;
+  padding: 11px 15px;
   padding-bottom: 30px;
-  word-break: break-all;
+  text-align: justify;
+  background: #fff;
+  box-shadow: 1px 1px 4px 1px #c3c3c35c;
+  border-radius: 4px;
+  color: #636363;
+  word-break: break-word;
+}
+
+
+.night{
+  background: #1d1d1d;
+  color: #aaa;
 }
 
 
@@ -187,7 +198,7 @@ line-height: 1.0;
 
 
   .parag{
-    text-align: justify;  
+    text-align: justify;
   }
 
 }

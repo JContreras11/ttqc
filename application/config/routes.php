@@ -59,6 +59,8 @@ $route['usuario/'.$this->uri->segment(2)] = 'usuario/usuario/'.$this->uri->segme
 $route['usuario/get_sol'] = 'usuario/get_sol';
 $route['usuario/get_usu'] = 'usuario/get_usu';
 
+$route['usuario/upd'] = 'usuario/upd';
+
 
 $route['entrada/'.$this->uri->segment(2)] = 'blog/get_blog/'.$this->uri->segment(2);
 

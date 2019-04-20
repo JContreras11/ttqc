@@ -18,23 +18,24 @@
 
         <div class="col-md-6">
             <h3>ESCRIBENOS</h3>
+            <form class="" action="#" method="post" id="frm-contact">
 
             <div class="row">
               <div class="col-md-6">
                 <div class="input-group-icon mt-10">
 										<div class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
-										<input type="text" name="email" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Address'" required="" class="single-input">
+										<input type="email" name="email" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Address'" required="" class="single-input frmInput">
 								</div>
               </div>
               <div class="col-md-6">
                 <div class="input-group-icon mt-10">
 										<div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
-										<input type="text" name="tel" placeholder="Telefono" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Address'" required="" class="single-input">
+										<input type="text" name="tel" placeholder="Telefono" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Address'" required="" class="single-input frmInput">
 									</div>
               </div>
               <div class="col-md-12">
                 <div class="input-group-icon mt-10">
-										<textarea name="name" rows="4" cols="4" placeholder="Mensaje" class="single-input"></textarea>
+										<textarea name="menss" rows="4" cols="4" placeholder="Mensaje" class="single-input frmInput"></textarea>
 								</div>
 
                 <div class="input-group-icon mt-10">
@@ -44,6 +45,7 @@
 
               </div>
             </div>
+          </form>
         </div>
         <div class="col-md-6">
             <h3>DETALLE DE CONTACTO</h3>
@@ -61,3 +63,5 @@
 
 
   <?php $this->load->view('includes/add_blog') ?>
+
+  <script src="<?= base_url() ?>assets/js/contact.js" charset="utf-8"></script>
