@@ -29,7 +29,7 @@ class Blog extends CI_Controller
                 $data['like'] = $this->Modelo_blog->haveLike($res[0]->ide_blog);
 
 
-                $this->load->view('includes/head');
+                $this->load->view('includes/head',$data);
                 $this->load->view('includes/menu');
                 $this->load->view('vis_single_blog',$data);
                 $this->load->view('includes/footer');

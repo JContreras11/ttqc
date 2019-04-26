@@ -32,7 +32,20 @@ class Usuario extends CI_Controller
         $this->load->view('vis_usu');
         // $this->load->view('bet/bet');
       } else {
-        $this->load->view('vis_usu_pub');
+
+
+          $data['usu'] = $this->Modelo_usuario->get_usu_pub($usr);
+          if ($data['usu']) {
+              $data['blog'] = $this->Modelo_usuario->get_pub($data['usu'][0]->ide_usu);
+            $this->load->view('vis_usu_pub',$data);
+          } else {
+            redirect('Home', 'refresh');
+          }
+
+
+
+
+
       }
 
       $this->load->view('includes/footer');
@@ -78,6 +91,16 @@ class Usuario extends CI_Controller
       $valid_extensions = array('jpeg', 'jpg', 'png', 'gif', 'bmp');
       $path = "./uploads/";
 
+
+      $data = array(
+        'ema_usu' => $this->input->post('email'),
+        'fb_usu' => $this->input->post('face'),
+        'ig_usu' => $this->input->post('ig'),
+        'tw_usu' => $this->input->post('twitter'),
+        'dir_usu' => $this->input->post('des'),
+      );
+
+
       if(isset($_FILES['imgInp']))
       {
        $img = $_FILES['imgInp']['name'];
@@ -90,6 +113,8 @@ class Usuario extends CI_Controller
        {
          $final_image = rand(1000,1000000).$img;
          $path = $path.$final_image;
+
+         $data['img_usu'] = $final_image;
 
         if(move_uploaded_file($tmp,$path))
         {
@@ -105,14 +130,7 @@ class Usuario extends CI_Controller
        $final_image = '';
      }
 
-      $data = array(
-        'ema_usu' => $this->input->post('email'),
-        'fb_usu' => $this->input->post('face'),
-        'ig_usu' => $this->input->post('ig'),
-        'tw_usu' => $this->input->post('twitter'),
-        'img_usu' => $final_image,
-        'dir_usu' => $this->input->post('des'),
-      );
+
 
 
 

@@ -10,7 +10,7 @@ class Modelo_blog extends CI_Model
   {
 
 
-    $res = $this->db->select('ide_blog,tit_blog,des_blog,tags_blog,min_des_blog,img_blog,nom_usu,img_usu,fech_blog,users.ema_usu,blog.ide_usu,blog.ide_est_blog')
+    $res = $this->db->select('ide_blog,url_blog,tit_blog,des_blog,tags_blog,min_des_blog,img_blog,nom_usu,img_usu,fech_blog,users.ema_usu,blog.ide_usu,blog.ide_est_blog')
                     ->from('blog')
                     ->where('url_blog',$url)
                     ->where('blog.is_active',1)
@@ -108,7 +108,7 @@ class Modelo_blog extends CI_Model
   }
 
   public function unLike($id_blog)
-  {      
+  {
     if ($this->db->where(array('ide_usu' =>$this->session->userdata('logged_in')['id'], 'ide_blog' => $id_blog ))->delete('likes')) {
       return true;
     } else {

@@ -34,6 +34,33 @@ class Modelo_usuario extends CI_Model
   }
 
 
+  public function get_usu_pub($url)
+  {
+    $res =  $this->db->select('nom_usu,img_usu,fb_usu,ig_usu,tw_usu,dir_usu,ide_usu')
+                     ->where('nom_usu', $url)
+                     ->get('users');
+    if ($res) {
+      return $res->result();
+    } else {
+      return false;
+    }
+
+  }
+
+
+
+  public function get_pub($ide_usu)
+  {
+    $res =  $this->db->select('min_des_blog, img_blog, url_blog, fech_blog, tit_blog, ide_blog')
+                     ->where('ide_usu', $ide_usu)
+                     ->get('blog');
+    if ($res) {
+      return $res->result();
+    } else {
+      return false;
+    }
+  }
+
 
   public function upd($id, $data)
   {

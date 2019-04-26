@@ -98,7 +98,7 @@
 
    -->
     <!--Open Sans Font [ OPTIONAL ]-->
-    <link href="http://127.0.0.1/estefania_blog/admin/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?= base_url() ?>admin/assets/css/bootstrap.min.css" rel="stylesheet">
     <!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
 
@@ -145,19 +145,19 @@
     Detailed information and more samples can be found in the document.
 
     =================================================-->
-    <link id="theme" href="http://127.0.0.1/estefania_blog/admin/assets/css/themes/type-e/theme-ocean.min.css" rel="stylesheet">
+    <link id="theme" href="<?= base_url() ?>admin/assets/css/themes/type-e/theme-ocean.min.css" rel="stylesheet">
     <!--jQuery [ REQUIRED ]-->
-    <!-- <script src="http://127.0.0.1/estefania_blog/admin/assets/js/jquery.min.js"></script>
+    <!-- <script src="<?= base_url() ?>admin/assets/js/jquery.min.js"></script>
 
 
 
 
 
 
-    <script src="http://127.0.0.1/estefania_blog/admin/assets/js/nifty.min.js"></script> -->
+    <script src="<?= base_url() ?>admin/assets/js/nifty.min.js"></script> -->
 
-    <link href="http://127.0.0.1/estefania_blog/admin/assets/plugins/datatables/media/css/dataTables.bootstrap.css" rel="stylesheet">
-    <link href="http://127.0.0.1/estefania_blog/admin/assets/plugins/datatables/extensions/Responsive/css/responsive.dataTables.min.css" rel="stylesheet">
+    <link href="<?= base_url() ?>admin/assets/plugins/datatables/media/css/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="<?= base_url() ?>admin/assets/plugins/datatables/extensions/Responsive/css/responsive.dataTables.min.css" rel="stylesheet">
 
     <script type="text/javascript">
       const url = ''
@@ -165,7 +165,7 @@
     </script>
 
 
-    <script src="http://127.0.0.1/estefania_blog/admin/js/propios.js"></script>
+    <script src="<?= base_url() ?>admin/js/propios.js"></script>
 
 
   <div class="grid-area">
@@ -184,7 +184,7 @@
                   <!--================================
                   <div class="mainnav-brand">
                       <a href="index.html" class="brand">
-                          <img src="http://127.0.0.1/estefania_blog/admin/assets/img/logo.png" alt="Nifty Logo" class="brand-icon">
+                          <img src="<?= base_url() ?>admin/assets/img/logo.png" alt="Nifty Logo" class="brand-icon">
                           <span class="brand-text">Nifty</span>
                       </a>
                       <a href="#" class="mainnav-toggle"><i class="pci-cross pci-circle icon-lg"></i></a>
@@ -208,12 +208,12 @@
                                   </div>
                                   <div class="profile-wrap text-center">
                                       <div class="pad-btm">
-                                      <a href="javascript:void(0)">  <img class="img-circle img-md" src="<?= base_url() ?>assets/img/usr.jpg" alt="Profile Picture" style="width: 85%;height: 150px;" id="imgUsu"></a>
+                                      <a href="javascript:void(0)">  <img class="img-circle img-md imgUsu" src="<?= base_url() ?>assets/img/usr.jpg" alt="Profile Picture" style="width: 85%;height: 150px;" id="imgUsu"></a>
                                       </div>
                                       <a href="#profile-nav" class="box-block" data-toggle="collapse" aria-expanded="false">
 
-                                          <p class="mnp-name" id="usuN">0COOL</p>
-                                          <span class="mnp-desc" id="emaU" >jesuscontreras102@hotmail.com</span>
+                                          <p class="mnp-name" id="usuN"></p>
+                                          <span class="mnp-desc" id="emaU" ></span>
                                       </a>
                                   </div>
                               </div>
@@ -228,7 +228,7 @@
                                           <a href="javascript:views('tabEnt','menuEnt')" >
                                               <!-- icono -->
                                             <span class="menu-title">
-                                                Entradas
+                                                Historias
                                             </span>
                                           </a>
                                         </li>
@@ -281,8 +281,8 @@
           <header class="default-header">
             <nav class="navbar navbar-expand-lg navbar-light"  style="    background-color: #fff; box-shadow: -7px -20px 30px 0px rgba(158,158,158,0.3);">
               <div class="container">
-                  <a class="navbar-brand" href="<?= base_url() ?>" style="padding-right: 160px;">
-                    <!-- <img src="<?= base_url() ?>assets/img/logo_t.png" alt="" style=" width: 160px;"> -->
+                  <a class="" href="<?= base_url() ?>" style="padding-right: 160px;">
+                    <img src="<?= base_url() ?>assets/img/logo_t.png" alt="" style=" width: 130px;" class="imgPhone">
                   </a>
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -349,10 +349,9 @@
                         <div id="page-content">
 
 
-
                                 <!-- Basic Data Tables -->
                                 <!--===================================================-->
-                                <div class="panel tabu " id="tabEnt" style="display: block;">
+                                <div class="panel tabu " id="tabEnt" style="display: block;margin-left: 25px;margin-right: 25px;">
                                     <div class="panel-heading">
                                         <button type="button" name="button" class="btn btn-success" data-toggle="modal" data-target="#myModal" style="    margin: 17px 35px;">Escribir</button>
                                     </div>
@@ -382,7 +381,7 @@
                                 <!--===================================================-->
 
 
-                                <div class="panel tabu" id="tabSol"  style="display: none;">
+                                <div class="panel tabu" id="tabSol"  style="display: none;margin-left: 25px;margin-right: 25px;">
                                   <div class="panel-heading">
                                       <h3>Solicitudes de mensajes</h3>
                                   </div>
@@ -410,7 +409,7 @@
                                 </div>
 
 
-                                <div class="panel tabu" id="tabUsu"  style="display: none;">
+                                <div class="panel tabu" id="tabUsu"  style="display: none; margin-left: 25px;margin-right: 25px;">
                                   <div class="panel-heading">
                                       <h3>Editar Usuario</h3>
                                   </div>
@@ -421,9 +420,16 @@
                                     <div class="row">
                                       <div class="col-md-6">
 
+
+
+                                          <a href="javascript:void(0)">
+                                            <img class="img-circle img-md imgUsu imgPhone" src="<?= base_url() ?>assets/img/usr.jpg"  style="height: 157px;border: solid;margin: 8% 20%;    max-width: 158px;" >
+                                          </a>
+
+
                                           <div class="col-md-12">
                                             <div class="form-group">
-                                              <input type="text" class="form-control" name="email" placeholder="Correo" id="email" readonly="readonly">
+                                              <input type="text" class="form-control" name="email" placeholder="Correo" id="email" readonly="readonly" required>
                                             </div>
                                           </div>
                                           <div class="col-md-12">
@@ -433,17 +439,17 @@
                                           </div>
                                           <div class="col-md-4">
                                             <div class="form-group">
-                                              <input type="text" name="face" placeholder="Facebook" required="" class="form-control" id="face" readonly="readonly">
+                                              <input type="text" name="face" placeholder="Facebook"  class="form-control" id="face" readonly="readonly">
                                             </div>
                                           </div>
                                           <div class="col-md-4">
                                             <div class="form-group">
-                                              <input type="text" name="ig" placeholder="Instagram" required="" class="form-control" id="ig" readonly="readonly">
+                                              <input type="text" name="ig" placeholder="Instagram"  class="form-control" id="ig" readonly="readonly">
                                             </div>
                                           </div>
                                           <div class="col-md-4">
                                             <div class="form-group">
-                                              <input type="text" name="twitter" placeholder="Twitter"  required="" class="form-control" id="twitter" readonly="readonly">
+                                              <input type="text" name="twitter" placeholder="Twitter"   class="form-control" id="twitter" readonly="readonly">
                                             </div>
                                           </div>
 
@@ -481,7 +487,7 @@
                                         <div class="col-md-6">
 
                                           <div class="form-group">
-                                            <input type="submit" value="Guardar" class="btn btn-sucess btn-block" style="background: #8cff92;    color: #f7f7f7;">
+                                            <input type="submit" value="Guardar" id="saveBut" class="btn btn-sucess btn-block" style="background: #8cff92;    color: #f7f7f7;" disabled>
                                           </div>
 
                                         </div>
@@ -495,6 +501,23 @@
 
                                   </div>
                                 </div>
+
+
+
+                                <div class=" panel  menuButtons" style="margin-left: 25px;margin-right: 25px;">
+                                  <div class="col-md-12 ">
+                                    <div class="col-sm-4">
+                                      <button class="btn btn-success" style="background-image: -webkit-linear-gradient(45deg, #ff4d7e 0%, #ff6a5b 100%);" onclick="javascript:views('tabEnt','menuEnt')">Historias</button>
+                                    </div>
+                                    <div class="col-sm-4">
+                                      <button class="btn btn-success" style="background-image: -webkit-linear-gradient(45deg, #ff4d7e 0%, #ff6a5b 100%);" onclick="javascript:views('tabSol','menuSol')">Solicitudes</button>
+                                    </div>
+                                    <div class="col-sm-4">
+                                      <button class="btn btn-success" style="background-image: -webkit-linear-gradient(45deg, #ff4d7e 0%, #ff6a5b 100%);" onclick="javascript:views('tabUsu','menuUsu')">Editar</button>
+                                    </div>
+                                  </div>
+                                </div>
+
 
 
                         </div>
@@ -525,11 +548,11 @@
 
 
 
-    <!-- <link href="http://127.0.0.1/estefania_blog/admin/assets/css/nifty.min.css" rel="stylesheet"> -->
+    <!-- <link href="<?= base_url() ?>admin/assets/css/nifty.min.css" rel="stylesheet"> -->
 
-            <script src="http://127.0.0.1/estefania_blog/admin/assets/plugins/datatables/media/js/jquery.dataTables.js"></script>
-          	<script src="http://127.0.0.1/estefania_blog/admin/assets/plugins/datatables/media/js/dataTables.bootstrap.js"></script>
-          	<script src="http://127.0.0.1/estefania_blog/admin/assets/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js"></script>
+            <script src="<?= base_url() ?>admin/assets/plugins/datatables/media/js/jquery.dataTables.js"></script>
+          	<script src="<?= base_url() ?>admin/assets/plugins/datatables/media/js/dataTables.bootstrap.js"></script>
+          	<script src="<?= base_url() ?>admin/assets/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js"></script>
 
 
 

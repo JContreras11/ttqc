@@ -4,15 +4,35 @@
   <!-- Mobile Specific Meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- Favicon-->
-  <link rel="shortcut icon" href="img/fav.png">
   <!-- Author Meta -->
-  <meta name="author" content="colorlib">
+  <meta name="author" content="TTQC">
   <!-- Meta Description -->
   <meta name="description" content="">
   <!-- Meta Keyword -->
-  <meta name="keywords" content="">
+  <meta name="keywords" content="#blog">
+
+  <meta property="og:image" content="<?= base_url() ?>uploads/ttq5.png" />
+
   <!-- meta character set -->
   <meta charset="UTF-8">
+
+
+  <?php if (isset($data)): ?>
+
+    <?php foreach ($data as $k => $v): ?>
+
+    <meta property="og:title" content="<?= $v->tit_blog ?>" />
+    <meta property="og:url" content="<?= base_url() ?>entrada/<?= $v->url_blog ?>" />
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="<?= base_url() ?>uploads/<?= $v->img_blog ?>" />
+    <meta property="og:description" content="<?= strip_tags($v->min_des_blog) ?>" />
+
+
+    <?php endforeach; ?>
+
+  <?php endif; ?>
+
+
   <!-- Site Title -->
   <title>TTQC</title>
 
@@ -24,6 +44,8 @@
   <link rel="manifest" href="<?= base_url() ?>assets/img/favicon/site.webmanifest">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
+
+
 
 
     <!--
@@ -48,6 +70,9 @@
 
       gtag('config', 'UA-138133553-1');
     </script>
+
+
+    <script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5cbbe652f3971d0012e24636&product=inline-share-buttons' async='async'></script>
 
 
   </head>

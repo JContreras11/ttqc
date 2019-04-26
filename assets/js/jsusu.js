@@ -152,6 +152,7 @@
 
       /* 2 */ $(this).css('display','none');
       /* 1 */ $('#canUsu').css('display','block')
+      /* 1 */ $('#saveBut').removeAttr('disabled')
 
     })
 
@@ -159,6 +160,7 @@
       $('.form-control').attr('readonly','readonly');
       /* 2 */ $(this).css('display','none');
       /* 1 */ $('#editUsu').css('display','block')
+      /* 1 */ $('#saveBut').attr('disabled','true')
 
       // hidde
       // show
@@ -204,6 +206,7 @@
                             $('.form-control').attr('readonly','readonly');
                     /* 2 */ $('#canUsu').css('display','none');
                     /* 1 */ $('#editUsu').css('display','block')
+                    /* 1 */ $('#saveBut').attr('disabled','true')
 
                     //reciclar codigo
                     jalar_usu();
@@ -294,7 +297,7 @@ function jalar_data(){
                   `;
        })
        $('#grilla').html(grill);
-       $('#demo-dt-basic').DataTable();
+       $('#demo-dt-basic').DataTable({responsive: true});
   })
 }
 
@@ -327,7 +330,7 @@ function jalar_usu(){
          $('#twitter').val(item.tw_usu)
          $('#email').val(item.ema_usu)
 
-         $('#imgUsu').attr('src',`${base}uploads/${item.img_usu}`);
+         $('.imgUsu').attr('src',`${base}uploads/${item.img_usu}`);
          $('#usuN').text(item.nom_usu);
          $('#emaU').text(item.ema_usu);
 

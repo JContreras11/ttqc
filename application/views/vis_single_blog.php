@@ -1,3 +1,4 @@
+
 <style media="screen">
   .commetUsu{
     padding-top: 15px;
@@ -81,6 +82,14 @@
                         <?php endif; ?>
 
                         </div>
+
+                        <!-- BOTONES PARA COMPARTIR -->
+
+                        <div class="sharethis-inline-share-buttons" style="margin-top: 20px;"></div>
+
+                        <!-- BOTONES PARA COMPARTIR -->
+
+
                         <div class="bottom-wrapper" style="padding: 8px 0 0 0px;">
                             <div class="row" style=" padding: 0 20px; font-size: 16px;">
                                 <a href="javascript:void(0)" class="acction <?= $like ? 'liked' : '' ?>" data-action="like" idr="<?= $data[0]->ide_blog ?>">

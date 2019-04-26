@@ -21,7 +21,16 @@
           <li><a href="<?= base_url() ?>home/nosotros">Nosotros</a></li>
           <li><a href="<?= base_url() ?>home/contacto">Contacto</a></li>
           <?php if ($this->session->userdata('logged_in')['username']): ?>
-            <li><a href="<?= base_url() ?>usuario/<?= $this->session->userdata('logged_in')['username'] ?>" >Perfil</a></li>
+            <!-- <li><a href="<?= base_url() ?>usuario/<?= $this->session->userdata('logged_in')['username'] ?>" >Perfil</a></li> -->
+            <li class="dropdown">
+              <a class="dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                Perfil
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="<?= base_url() ?>usuario/<?= $this->session->userdata('logged_in')['username'] ?>">Ver</a>
+                <a class="dropdown-item" href="<?= base_url() ?>login/logout">Salir</a>
+              </div>
+            </li>
           <?php else: ?>
             <li><a href="<?= base_url() ?>login">Login</a></li>
           <?php endif; ?>

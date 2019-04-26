@@ -1,7 +1,7 @@
 
 RewriteEngine On
-RewriteBase /estefania_blog/
+RewriteBase /ttqc/
 RewriteCond $1 !\.(gif|jpe?g|png)$ [NC]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ /estefania_blog/index.php/?$1 [L]
+RewriteRule ^(.*)$ /ttqc/index.php/?$1 [L]
