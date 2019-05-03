@@ -53,7 +53,7 @@
 
 
     <!-- Start travel Area -->
-    <section class="travel-area section-gap seccat" id="travel" style="padding-top: 20px;padding-bottom: 40px;margin-top: 20px;">
+    <section class="travel-area section-gap seccat" id="travel" style="padding-top: 20px;padding-bottom: 140px;margin-top: 20px;">
       <div class="container">
         <div class="row d-flex justify-content-center">
           <div class="menu-content pb-20 col-lg-8">
