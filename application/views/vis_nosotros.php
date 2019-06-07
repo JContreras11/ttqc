@@ -23,11 +23,11 @@
 						<div class="row">
               <div class="col-md-12">
                   <p style="margin-top: 30px;color: #000;font-size: 17px;" class="parag">
-                    Te Tengo Que Contar (#TTQC) es una plataforma transmedia hecha por jóvenes para jóvenes. Este proyecto nació en el 2018, bajo la dirección de Estefanía Gordillo, estudiante de comunicación social de la Pontificia Universidad Javeriana y busca darle vida a todos esos micro relatos, historias, anécdotas… que vivimos a diario, mediante el apoyo de otros estudiantes bogotanos, para la creación de guiones de ficción en un futuro.
+                    Te Tengo Que Contar (#TTQC) es una plataforma transmedia hecha por jóvenes para jóvenes. Este proyecto nació en el 2018, bajo la dirección de Estefanía Gordillo, estudiante de Comunicación social de la Pontificia Universidad Javeriana, con la asesoría de Carlos Obando (<a href="https://twitter.com/carlosoyave?s=08" target="_blank">@carlosoyave</a>), profesor de la Facultad de Comunicación y Lenguaje. El proyecto busca  darle vida a todos esos micro relatos, historias y anécdotas que vivimos a diario, para la creación de guiones de ficción.
                   </p>
               </div>
 
-							<div class="col-md-6">
+							<div class="col-md-12">
 								<div class="single-defination" style="text-align:center;">
                   <img src="<?= base_url() ?>assets/img/estefania.png" alt="" style=" width: 280px;margin-bottom: 20px;border-radius: 100%; height: 280px;">
 									<h4 class="mb-10">Estefanía Gordillo</h4>
@@ -39,7 +39,7 @@
                   <p>Comunicadora social con énfasis en producción audiovisual <br> Creadora y directora de www.tetengoquecontar.com</p>
 								</div>
 							</div>
-							<div class="col-md-6">
+							<!-- <div class="col-md-6">
 								<div class="single-defination" style="text-align:center;">
                   <img src="<?= base_url() ?>assets/img/jesus.jpg" alt="" style=" width: 280px;margin-bottom: 20px;border-radius: 100%; height: 280px;">
 									<h4 class="mb-10">Jesús Contreras</h4>
@@ -48,9 +48,9 @@
                     <a href="https://www.instagram.com/elchinojmcp/" target="_blank"><i class="fa fa-twitter social-i"></i></a>
                     <a href="https://twitter.com/elchinojmcp1" target="_blank"><i class="fa fa-instagram social-i"></i></a>
                   </div>
-                  <p>Progrogramador Freelance <br> Desarrollador de www.tetengoquecontar.com </p>
+                  <p>Progrogramador Freelance <br> Desarrollador web de www.tetengoquecontar.com </p>
 								</div>
-							</div>
+							</div> -->
 						</div>
 					</div>
 

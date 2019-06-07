@@ -31,7 +31,7 @@
                         <div class="single-list flex-row d-flex">
                             <div class="thumb">
                                 <div class="date">
-                                    <span>20</span><br>Dec
+                                  <?= $c->fechaCastellano($v->fech_blog) ?>
                                 </div>
                                 <img src="<?= base_url()?>uploads/<?= $v->img_blog ?>" alt="" style="max-width: 280px; min-width: 280px;">
                             </div>

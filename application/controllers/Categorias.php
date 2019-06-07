@@ -24,6 +24,7 @@ class Categorias extends CI_Controller
           $data['data'] = $res;
 
           $data['cat'] = $this->Modelo_cat->get_cat_des($url);
+          $data['c'] = $this;
 
           $this->load->view('includes/head');
           $this->load->view('includes/menu');

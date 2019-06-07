@@ -37,11 +37,11 @@
           </div>
 
           <div class="col-md-6">
-                <p class="textHome">Somos una plataforma transmedia que cree en el potencial narrativo tan grande que pueden tener ‘simples’ relatos cotidianos.</p>
+                <p class="textHome">Somos una plataforma transmedia que cree en el potencial narrativo que pueden tener ‘simples’ relatos cotidianos.</p>
                 <p class="textHome">
                   <center class="textTt">  <strong>¡Te tengo que contar! </strong></center>
                 </p>
-                <p class="textHome">  Es un proyecto de escritura colaborativa en la que los jóvenes bogotanos podrán aportar sus historias del día a día, para así ir creando un banco de historias, que a su vez puedan ser adaptadas por jóvenes realizadores audiovisuales, guionistas, escritores, etc, en guiones de ficción.  </p>
+                <p class="textHome">  Es un proyecto de escritura colaborativa en la que los jóvenes bogotanos podrán aportar sus relatos del día a día, para así ir creando un banco de historias, que a su vez puedan ser adaptadas por jóvenes realizadores audiovisuales, guionistas, escritores, etc, en guiones de ficción.  </p>
           </div>
           <div class="col-md-6">
                 <iframe width="100%" height="100%" src="https://www.youtube.com/embed/d4KX0QAMgHA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -157,7 +157,7 @@
           <?php foreach ($news as $k => $v): ?>
             <div class="item single-cat">
               <img src="<?= base_url() ?>uploads/<?= $v->img_new ?>" alt="" style="max-height: 227px;">
-              <p class="date"><?= date('d-m-Y', strtotime($v->tit_new)) ?></p>
+              <p class="date"><?= date('d-m-Y', strtotime($v->fech_new)) ?></p>
               <h4><a href="<?= $v->url_new ?>" target="_blank"><?= $v->tit_new ?></a></h4>
               <div class="desNot"><?= substr($v->des_new,0,150) ?>...</div>
             </div>

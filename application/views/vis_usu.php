@@ -248,13 +248,16 @@
                                             </span>
                                           </a>
                                         </li>
-                                        <!-- <li  class="lim" id="usuarios" style="position: absolute;width: 100%;color: #fff;bottom: 0;background: #ff8585;">
-                                          <a href="<?= base_url() ?>login/logout">
+
+                                        <li  class="lim" id="" data-toggle="modal" data-target="#exampleModal" style="margin: 20px 0;background: white;font-size: 18px;color: #fff;padding: 6px 0;border:none;"  >
+                                          <a href="javascript:void(0)" style="color: #ff6165;" >
+                                              <!-- icono -->
                                             <span class="menu-title">
-                                                Salir
+                                                Importante tener en cuenta
                                             </span>
                                           </a>
-                                        </li> -->
+                                        </li>
+
 
 
                              </ul>
@@ -271,6 +274,115 @@
           <!--END MAIN NAVIGATION-->
         </div>
     </div>
+
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Términos y Condiciones</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+
+            <textarea name="name" class="form-control" rows="20" cols="80" readonly="true" style="text-align:center ;">
+
+
+              El presente es un breve resumen de los puntos más importantes al momento de aceptar
+
+                los términos y condiciones:
+
+                Los términos y condiciones regulan la relación entre el Usuario y la plataforma web Te Tengo
+                Que Contar respecto al acceso y el uso por parte del Usuario de la Página Web. El Usuario, al
+                ingresar a la Página Web a través de cualquier modalidad o medio conocido o por conocerse
+                y/o usarla, queda obligado bajo los mismos.
+                Cláusula de exoneración sobre propiedad intelectual. Te Tengo Que Contar actúa como
+                mero intermediario entre los Usuarios lo que implica que, la regulación sobre los contenidos
+                subido a la Página Web no debe ser verificados ni garantizador por Te Tengo Que Contar. Por
+                ende, Te Tengo Que Contar no se responsabiliza respecto de los contenidos en las siguientes
+                condiciones:
+                (i) Sobre los derechos de propiedad intelectual de un Usuario o un tercero que se vea
+                afectado.
+                (ii) No garantiza la veracidad del contenido.
+                (iii) Sobre la información subida por los Usuarios en caso de que sea inmoral,
+                inapropiada, difame o cause perjuicios a cualquier persona.
+                Los Usuarios podrán utilizar el contenido subido a la Página Web y en caso de que sea
+                utilizado para obtener beneficios económicos o de cualquier otra clase, se entenderá que las
+                licencias y cesiones que deban presentarse serán manejados internamente por los Usuarios y
+                a disposición de los mismos. Te Tengo Que Contar de la misma manera, se exonera de
+                responsabilidad frente a los posibles conflictos jurídicos que se presenten entre los mismos
+                toda vez que, actúa como intermediario.
+                El contenido compartido por los usuarios registrados en la Página Web, no le pertenece y
+                pertenecerá a Te Tengo Que Contar, la propiedad moral del contenido suministrado a la
+                Página Web por los usuarios le pertenece al usuario que originalmente envía el relato.
+                Tengo Que Contar se reserva la facultad de quitar la información publicada en la Página Web
+                por el Usuario cuando lo considere necesario, sin previo aviso, y no se hará responsable por la
+                pérdida de dicha información en caso de que el Usuario no tenga copia de la misma.
+
+                Uso de la página web para lectores: Acepta hacer un uso adecuado de la Página Web,
+                incluyendo la sección de comentarios, donde se compromete a no propagar mensajes
+                inadecuados, irreverentes, difamatorios, obscenos indecentes, intimidatorios, o que incite a la
+                violencia, a riesgo de ser bloqueado de la Página Web a juicio del equipo de Te Tengo Que
+                Contar; Reconoce que la información proporcionada en el formulario de registro es veraz,
+                aceptando los términos y condiciones de la página
+                Uso de la página web para escritores de relatos: Se compromete a : Registrarse al
+                momento de ingresar a la Página Web, aceptar los términos condiciones de la página, el
+                Usuario puede elegir que su relato sea compartido de manera anónima y no autorizar la
+                divulgación de sus datos personales como nombre, teléfono y/o correo electrónico en el caso
+                de que un tercero registrado en La Página desee usar su relato; En caso de no hacer clic en
+                esta opción proporcionada dentro del formulario de envío de la historia, el Usuario reconoce
+                que cede el derecho a Te Tengo Que Contar de compartir su correo electrónico y/o teléfono
+                con el Usuario que haya dado clic en la opción “usar historia”. El Usuario reconoce que es el
+
+                autor intelectual y moral de la obra que sube a la Página Web; y que cede los derechos
+                patrimoniales sobre la obra en caso de que esta logre obtener alguna remuneración
+                económica a futuro; además, acepta que una vez el escrito sea enviado, le está otorgando el
+                derecho a Te Tengo Que Contar de distribuirlo en la Página Web; el Usuario reconoce que
+                mantiene indemne a Te Tengo Que Contar en el caso de que se produzca cualquier infracción a
+                la ley de derechos de autor y autoriza a la modificación, alteración, adaptación, extensión,
+                transmisión, publicación, distribución, reelaboración, de la obra original, protegido bajo ley de
+                derechos de autor.
+                Uso de la página para realizadores que deseen adaptar relatos: El usuario acepta
+                registrarse en la Página Web al momento de hacer clic en el título del relato, reconoce que es
+                su obligación notificar mediante la Página Web, haciendo clic en el botón de usar historia,
+                cada vez que el Usuario desee hacer uso de cualquier relato disponible en la Página Web, ya
+                sea para adaptarlo, modificarlo, extenderlo, publicarlo, reelaborarlo; reconocerá siempre los
+                derechos morales que tiene el usuario que envió originalmente la obra, en caso de ser
+                anónimo, el Usuario dará reconocimiento a la plataforma web que distribuyó el relato de
+                dónde surgió la inspiración, para la adaptación de la obra original. El Usuario no está en la
+                obligación de dar un reconocimiento patrimonial al Usuario que originalmente envió la obra;
+                es a decisión del Usuario si desea ponerse en contacto con el Usuario que originalmente envió
+                la obra a la Página Web; Te Tengo Que Contar no se hace responsable por cualquier tipo de
+                contacto que se haga a futuro, negociación comercial, económica, publicitaria, de manera
+                personal, en el caso de que un tercero registrado en la página desee hacer uso del relato y
+                además contactar directamente a la persona que originalmente envió este relato; el Usuario
+                reconoce que mantiene indemne a Te Tengo Que Contar en el caso de que se produzca
+                cualquier infracción a la ley de derechos de autor.
+
+            </textarea>
+
+
+          </div>
+          <div class="modal-footer">
+
+            <a href="<?= base_url() ?>assets/docs/terminosycondiciones.docx" download ><button type="button" class="btn btn-primary" > <i class="fa fa-cloud-download" style="color:#fff;"></i> Terminos y condiciones</button></a>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -515,6 +627,10 @@
                                     <div class="col-sm-4">
                                       <button class="btn btn-success" style="background-image: -webkit-linear-gradient(45deg, #ff4d7e 0%, #ff6a5b 100%);" onclick="javascript:views('tabUsu','menuUsu')">Editar</button>
                                     </div>
+
+                                  </div>
+                                  <div class="col-md-12">
+                                    <center><a href="javascript:void(0)" style="color: #ff6165;" data-toggle="modal" data-target="#exampleModal" >Importante tener en cuenta</a></center>
                                   </div>
                                 </div>
 
